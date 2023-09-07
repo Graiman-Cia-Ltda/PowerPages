@@ -15,7 +15,7 @@
     // Aquí coloca el código que deseas ejecutar después de que se haya cargado el DOM
     console.log("El DOM ha cargado por completo");
 
-    window.addEventListener("load", function () {
+    //window.addEventListener("load", function () {
 
       band = true;
       //******** cuando da click en el ícono de lupa  *************************
@@ -41,7 +41,7 @@
       }
   
       // 5000 milisegundos = 5 segundos
-    });
+    //});
   });
 
   //******** cuando carga la página ***************************************
