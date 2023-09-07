@@ -10,33 +10,40 @@
   });*/
   //********* cuando da enter **********************************************
   var band = false;
-  window.addEventListener("load", function () {
 
-    band = true;
-    //******** cuando da click en el ícono de lupa  *************************
-    var botonFiltro = document.querySelector(".btn-hg");
-    botonFiltro.addEventListener("click", function () {
-      crearBoton();
-    });
+  document.addEventListener("DOMContentLoaded", function() {
+    // Aquí coloca el código que deseas ejecutar después de que se haya cargado el DOM
+    console.log("El DOM ha cargado por completo");
 
-    var campoBusqueda = document.getElementsByClassName("query form-control")[0];
-    campoBusqueda.addEventListener("keydown", function (event) {
-      if (event.keyCode === 13) {
-        // Aquí puedes poner el código que deseas ejecutar cuando se presiona Enter
+    window.addEventListener("load", function () {
+
+      band = true;
+      //******** cuando da click en el ícono de lupa  *************************
+      var botonFiltro = document.querySelector(".btn-hg");
+      botonFiltro.addEventListener("click", function () {
+        crearBoton();
+      });
+  
+      var campoBusqueda = document.getElementsByClassName("query form-control")[0];
+      campoBusqueda.addEventListener("keydown", function (event) {
+        if (event.keyCode === 13) {
+          // Aquí puedes poner el código que deseas ejecutar cuando se presiona Enter
+          crearBoton();
+        }
+      });
+  
+  
+      //******** cuando da click en el ícono de lupa  *************************
+      //******** cuando carga la página ***************************************
+      if (band) {
+        //alert('Bandera: '+band)
         crearBoton();
       }
+  
+      // 5000 milisegundos = 5 segundos
     });
-
-
-    //******** cuando da click en el ícono de lupa  *************************
-    //******** cuando carga la página ***************************************
-    if (band) {
-      //alert('Bandera: '+band)
-      crearBoton();
-    }
-
-    // 5000 milisegundos = 5 segundos
   });
+
   //******** cuando carga la página ***************************************
   function crearBoton() {
     setTimeout(function () {
