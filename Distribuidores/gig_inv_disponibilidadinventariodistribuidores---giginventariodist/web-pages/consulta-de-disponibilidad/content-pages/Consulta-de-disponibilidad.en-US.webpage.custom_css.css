@@ -56,11 +56,14 @@
     }
   }
   .image-container {
-    position: relative; /* Posición relativa para contenedor */
-    display: flex;
+    position: fixed; /* Posición relativa para contenedor */
+    top: 50%;
+    left: 50%;
     justify-content: center;
     align-items: center;
     height: 200px;
+    transform: translate(-50%, -50%);
+    display: none;
 }
 
 /* Estilo para la imagen */
@@ -72,3 +75,19 @@
     min-height: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+/*.spinner-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.spinner {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #034c7c;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}*/
