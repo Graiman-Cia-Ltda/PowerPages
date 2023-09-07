@@ -133,7 +133,7 @@
 
   function ejecucionFlujo(codigoProducto, descProducto, precioDis) {
     showSpinner();
-    var correoDist = "cre17_codigodistribuidor";
+    var correoDist = "{{user.cre17_codigodistribuidor}}";
     var esquema =
       '{"distribuidor": "' + correoDist + '","item": "' + codigoProducto + '", "descripcion": "' + descProducto + '"}';
     var url =
