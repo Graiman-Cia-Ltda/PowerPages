@@ -55,3 +55,20 @@
       transform: rotate(360deg);
     }
   }
+  .image-container {
+    position: relative; /* Posición relativa para contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para la imagen */
+img {
+    /* Tamaño máximo y mínimo */
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 50px;
+    min-height: 50px;
+}
