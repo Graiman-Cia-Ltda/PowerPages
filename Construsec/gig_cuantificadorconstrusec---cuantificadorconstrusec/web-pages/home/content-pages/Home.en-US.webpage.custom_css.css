@@ -1,0 +1,90 @@
+.spinner-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.6);
+  /* Semi-transparent black background */
+  display: none;
+  z-index: 9999;
+  /* Ensure the overlay is on top of other elements */
+}
+
+.spinner-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.spinner {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #6e0404;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column; /* Alineación vertical de los componentes */
+  align-items: center; /* Centrar horizontalmente */
+  min-width: 300px;
+}
+
+.componente {
+  width: 100%; /* Ocupar todo el ancho disponible */
+  min-width: 300px;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+#txtArea {
+  padding: 10px;
+  color: black; /* Color del texto de entrada */
+}
+
+#txtArea::placeholder {
+  color: gray; /* Color del placeholder */
+}
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.input-custom {
+  width: 100%;
+  padding: 10px;
+}
+
+.input-label {
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  background-color: white;
+  padding: 0 5px;
+  font-size: 12px;
+}
+
+td,th{
+  text-align: center;
+  border: solid gray 2px;
+  height: 40px;
+}
+

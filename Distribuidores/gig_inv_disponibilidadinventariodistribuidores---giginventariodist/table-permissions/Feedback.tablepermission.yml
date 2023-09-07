@@ -1,0 +1,13 @@
+adx_append: false
+adx_appendto: false
+adx_create: true
+adx_delete: false
+adx_entitylogicalname: feedback
+adx_entityname: Feedback
+adx_entitypermission_webrole:
+- 5f1045b2-c615-ee11-9cbe-002248de6701
+- 601045b2-c615-ee11-9cbe-002248de6701
+adx_entitypermissionid: f44d42b8-c615-ee11-9cbe-002248de6701
+adx_read: false
+adx_scope: 756150000
+adx_write: false

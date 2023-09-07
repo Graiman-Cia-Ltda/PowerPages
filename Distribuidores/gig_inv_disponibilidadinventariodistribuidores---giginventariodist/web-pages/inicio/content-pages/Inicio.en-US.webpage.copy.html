@@ -1,0 +1,394 @@
+<div class="row sectionBlockLayout sectionPrimaryColor" style="display: flex; flex-wrap: wrap; height: 15px; min-height: 15px; margin: 0px; padding: 8px; background: rgb(255, 255, 255);"></div>
+<div class="row sectionBlockLayout sectionPrimaryColor" style="padding: 8px; display: flex; flex-wrap: wrap; height: 15px; min-height: 15px; margin: 0px; background: rgb(255, 255, 255);"></div>
+<div class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 15px;"></div>
+<div class="row sectionBlockLayout text-left" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px; border: 0px solid rgb(161, 159, 157); border-radius: 0px; background-image: linear-gradient(0deg, rgba(161, 159, 157, 0), rgba(161, 159, 157, 0));">
+  <div class="container" style="padding: 0px; display: flex; flex-wrap: wrap;">
+    <div class="col-md-12 columnBlockLayout" style="flex-grow: 1; display: flex; flex-direction: column; min-width: 310px; word-break: break-word;">
+      <img src="/banner-espacios.png" alt="" name="banner-espacios.png" style="width: 100%; height: auto; max-width: 100%; box-shadow: 0px 0px 72px; border-color: #a19f9d; border: 0px solid #a19f9d;" />
+      <div class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 30px;"></div>
+      <h3 style="text-align: center;">
+        ​<b>CONSULTA LA DISPONIBILIDAD DE NUESTROS PRODUCTOS <a href="/ConsultaDisponibilidad" value="ConsultaDisponibilidad" class="anchor-inherit-styles">AQUÍ</a></b
+        ><b></b>
+      </h3>
+    </div>
+  </div>
+</div>
+<div id="myModal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Datos Obtenidos</h5>
+        <button type="button" data-dismiss="modal" class="close">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="modalBody"><!-- Aquí se mostrarán los datos obtenidos --></div>
+      </div>
+      <div class="modal-footer"><button type="button" data-dismiss="modal" class="btn btn-secondary">Cerrar</button></div>
+    </div>
+  </div>
+</div>
+<!----><!---->
+<div class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 15px;"></div>
+<script>
+  //********* cuando da enter **********************************************
+  /*let input = document.querySelector('#q');
+  input.addEventListener('keyup', function (event) {
+    var keycode = event.keyCode || event.which;
+    alert(keycode.textContent);
+    alert(keycode);
+    if (keycode == 13) {
+      alert("Enter!");
+    }
+  });*/
+  //********* cuando da enter **********************************************
+  window.addEventListener("load", function () {
+    //******** cuando da click en el ícono de lupa  *************************
+    var botonFiltro = document.querySelector(".btn-hg");
+    botonFiltro.addEventListener("click", function () {
+      setTimeout(function () {
+        let table = document.querySelector("table tbody");
+        let rows = table.rows;
+        for (let i = 0; i <= rows.length - 1; i++) {
+          let cols = rows[i].cells;
+          var lastCol = rows[i].insertCell(-1);
+          let button = document.createElement('button');
+          let td = document.createElement("td");
+          rows[i].setAttribute('id', rows[i].cells[0].innerText);
+          //button.innerText = 'View';
+          button.style.width = '60px'; // Establecer el ancho del botón
+          button.style.height = '40px';
+          //imagen lupa
+          let img = document.createElement('img');
+          img.src = '/search-interface-symbol.png';
+          img.alt = 'Buscar';
+          img.style.width = '20px'; // Establecer el ancho de la imagen
+          img.style.height = '20px'; // Establecer la altura de la imagen
+          //icono buscar
+          let span = document.createElement('span');
+          button.appendChild(img);
+          button.appendChild(span);
+          button.setAttribute('id', 'btn' + rows[i].cells[0].innerText);
+          var fila = rows[i].cells[0].innerText;
+          button.setAttribute('onclick', `ejecucionFlujo('${fila}')`);
+          lastCol.appendChild(button);
+
+        }
+      }, 500);
+    });
+    //******** cuando da click en el ícono de lupa  *************************
+
+
+    //******** cuando carga la página ***************************************
+    setTimeout(function () {
+      //console.log("Han pasado 5 segundos");
+      let lecturaBoton = document.getElementById('btnPrueba');
+      let table = document.querySelector("table tbody");
+      let rows = table.rows;
+      for (let i = 0; i <= rows.length - 1; i++) {
+        let cols = rows[i].cells;
+        var lastCol = rows[i].insertCell(-1);
+        let button = document.createElement('button');
+        let td = document.createElement("td");
+        rows[i].setAttribute('id', rows[i].cells[0].innerText);
+        button.style.width = '60px'; // Establecer el ancho del botón
+        button.style.height = '40px';
+        //imagen lupa
+        let img = document.createElement('img');
+        img.src = '/search-interface-symbol.png';
+        img.alt = 'Buscar';
+        img.style.width = '20px'; // Establecer el ancho de la imagen
+        img.style.height = '20px'; // Establecer la altura de la imagen
+        //icono buscar
+        let span = document.createElement('span');
+        button.appendChild(img);
+        button.appendChild(span);
+        button.setAttribute('id', 'btn' + rows[i].cells[0].innerText);
+        var fila = rows[i].cells[0].innerText;
+        button.setAttribute('onclick', `ejecucionFlujo('${fila}')`);
+        lastCol.appendChild(button);
+      }
+    }, 500); // 5000 milisegundos = 5 segundos
+  });
+  //******** cuando carga la página ***************************************
+
+
+  /* let lecturaBoton = document.getElementById('btnPrueba');
+   lecturaBoton.addEventListener('click', function (event) {
+
+     let table = document.querySelector("table tbody");
+     //alert('ReadyIngresó');
+     let rows = table.rows;
+     console.log(rows);
+     // Loop through each row(except the header)
+
+     for (let i = 0; i <= rows.length - 1; i++) {
+       let cols = rows[i].cells;
+       console.log(cols);
+       //   let lastCol = rows[i]['cells'][cols.length - 1];
+       var lastCol = rows[i].insertCell(-1);
+       console.log(lastCol);
+       console.log(rows[i].length);
+       // Create a new button element
+       let button = document.createElement('button');
+       let td = document.createElement("td");
+       rows[i].setAttribute('id', rows[i].cells[0].innerText);
+
+       button.innerText = 'View';
+       button.setAttribute('id', 'btn' + rows[i].cells[0].innerText);
+       var fila = rows[i].cells[0].innerText;
+       // Attach sayHi() function to 'onclick' attribute & pass row index
+       button.setAttribute('onclick', `ejecucionFlujo('${fila}')`); // modified
+       //button.setAttribute('onclick', `ejecucionFlujo('${fila}')`);
+       // Append the button to the last column
+       lastCol.appendChild(button);
+     }
+   });*/
+
+  // function sayHi(fila) {
+  // var $row = $(document.querySelector('table[class="table table-striped"] tbody tr'));
+  // var $row = $(document.querySelector('table[class="table table-striped"] tbody tr button'));    // Find the row
+  //var $row = $(this).parents("tr");
+  //var $text = $row.find("td:nth-child(1)").text(); // Find the text
+  //console.log($text);
+  //alert(fila);
+  // }
+  /* function ejecucionFlujo(codigoProducto) {
+     var correoDist = "cre17_codigodistribuidor";
+     var esquema = '{"distribuidor": "' + correoDist + '","item": "' + codigoProducto + '"}';
+     var url = "https://prod-24.brazilsouth.logic.azure.com:443/workflows/3c2ce445dd4343969230a2eaf457537f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=n25O6Dp1DOBEhC00EEsktcnnRI1GHy_qcdSJnF3FO3E";
+
+     fetch(url, {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json',
+         'Accept': 'application/json'
+       },
+       body: esquema
+     })
+       .then(function (response) {
+         if (response.ok) {
+           return response.json();
+         } else {
+           throw new Error('Error en la solicitud. Estado: ' + response.status);
+         }
+       })
+       .then(function (data) { //Dentro de esta función se realizan todas las acciones con los datos traídos del servicio, también lo que está en el modal.
+         console.log(data);
+
+         var modalBody = document.getElementById('modalBody');
+         modalBody.innerHTML = formatData(data); // Aplicar formato a los datos
+
+         // Agregar un campo de texto en la ventana modal
+         var cantidadUsuario = document.createElement('input');
+         cantidadUsuario.setAttribute('type', 'text');
+         cantidadUsuario.setAttribute('placeholder', 'Ingrese la cantidad que necesita');
+         modalBody.appendChild(cantidadUsuario);
+
+         // Mostrar la ventana modal manualmente
+         var modalElement = document.getElementById('myModal');
+         modalElement.style.display = 'block';
+         modalElement.classList.add('show');
+         modalElement.setAttribute('aria-hidden', 'false');
+         document.body.classList.add('modal-open');
+
+         // Cerrar la ventana modal al hacer clic en el botón de cerrar
+         //var botonAgregarCarrito = document.querySelector('.modal .btn-secondary');
+         var botonX = document.querySelector('.modal .close');
+         //botonAgregarCarrito.addEventListener('click', function () {
+            //var respuestaComparacion = compareValues();
+            //if (respuestaComparacion) {
+              //alert('Producto agregado al carrito de forma exitosa.');
+              //closeModal();
+            //}
+            //else
+             // alert('Ingrese una cantidad válida');
+          //});
+         botonX.addEventListener('click', function () {
+           closeModal();
+         });
+         //Estas son las funciones que se necesitan dentro del consumo
+         // Función para cerrar la ventana modal
+         function closeModal() {
+           // Reiniciar el contenido del campo de texto
+           cantidadUsuario.value = '';
+
+           // Eliminar el contenido del elemento modalBody
+           modalBody.innerHTML = '';
+           modalElement.style.display = 'none';
+           modalElement.classList.remove('show');
+           modalElement.setAttribute('aria-hidden', 'true');
+           document.body.classList.remove('modal-open');
+         }
+
+         //Función para comparar los valores de la cantidad y lo que digita el usuario
+         function compareValues() {
+           var inputValue = cantidadUsuario.value;
+           var columnName = 'disponibilidad';
+
+           return inputValue <= data[columnName];
+         }
+
+         // Agregar el manejador de eventos al botón de agregar al carrito fuera de la función ejecucionFlujo()
+         var botonAgregarCarrito = document.querySelector('.modal .btn-secondary');
+         botonAgregarCarrito.addEventListener('click', function () {
+           var comparisonResult = compareValues();
+           if (comparisonResult) {
+             alert('Producto agregado al carrito de forma exitosa.');
+             closeModal();
+           } else {
+             alert('Ingrese una cantidad válida');
+           }
+         });
+       })
+       .catch(function (error) {
+         console.log(error);
+       });
+
+
+   }*/
+
+
+
+  // Declarar las variables fuera del alcance de la función ejecucionFlujo
+  var cantidadUsuario;
+  var data;
+
+  function ejecucionFlujo(codigoProducto) {
+    var correoDist = "";
+    var esquema =
+      '{"distribuidor": "' + correoDist + '","item": "' + codigoProducto + '"}';
+    var url =
+      "https://prod-24.brazilsouth.logic.azure.com:443/workflows/3c2ce445dd4343969230a2eaf457537f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=n25O6Dp1DOBEhC00EEsktcnnRI1GHy_qcdSJnF3FO3E";
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: esquema,
+    })
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(
+            "Error en la solicitud. Estado: " + response.status
+          );
+        }
+      })
+      .then(function (responseData) {
+        data = responseData; // Asignar el valor a la variable data
+
+        console.log(data);
+
+        var modalBody = document.getElementById("modalBody");
+        modalBody.innerHTML = formatData(data);
+
+        //input
+        cantidadUsuario = document.createElement("input");
+        cantidadUsuario.setAttribute("type", "number");
+        cantidadUsuario.setAttribute(
+          "placeholder",
+          "Ingrese la cantidad solicitada"
+        );
+        cantidadUsuario.setAttribute('id', 'cantidad');
+        cantidadUsuario.style.width = "300px";
+        modalBody.appendChild(cantidadUsuario);
+        var modalElement = document.getElementById("myModal");
+        modalElement.style.display = "block";
+        modalElement.classList.add("show");
+        modalElement.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+
+        var botonX = document.querySelector(".modal .close");
+        botonX.addEventListener("click", function () {
+          closeModal();
+        });
+
+        var botonAgregarCarrito = document.querySelector(
+          ".modal .btn-secondary"
+        );
+        botonAgregarCarrito.setAttribute('onclick', `comparar()`);
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    // Función para cerrar la ventana modal
+    function closeModal() {
+      var modalBody = document.getElementById("modalBody");
+      var modalElement = document.getElementById("myModal");
+
+      cantidadUsuario.value = "";
+      modalBody.innerHTML = "";
+      modalElement.style.display = "none";
+      modalElement.classList.remove("show");
+      modalElement.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    //Función para comparar los valores de la cantidad y lo que digita el usuario
+    // function compareValues() {
+    // var inputValue = cantidadUsuario.value;
+    //var columnName = "disponibilidad";
+    //return inputValue <= data[columnName];
+    //}
+  }
+
+  function closeModalExt() {
+    var modalBody = document.getElementById("modalBody");
+    var modalElement = document.getElementById("myModal");
+
+    cantidadUsuario.value = "";
+    modalBody.innerHTML = "";
+    modalElement.style.display = "none";
+    modalElement.classList.remove("show");
+    modalElement.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  }
+
+  function comparar() {
+    var cantidadIng = document.getElementById('cantidad').value;
+    var disponible = document.getElementById('2').textContent;
+    var expresionRegular = /^\d+(\.\d{1,2})?$/; // Expresión regular para números con hasta 2 decimales
+    cantidadUsuario.setAttribute('pattern', expresionRegular.source);
+    // alert('Ingreso funcion comparar');
+    //alert(cantidadIng + '\nDisponible   ' + disponible);
+    if (Number(cantidadIng) <= Number(disponible)) {
+      alert("Producto agregado al carrito de forma exitosa.");
+      closeModalExt();
+    } else {
+      alert("Ingrese una cantidad válida");
+    }
+  };
+
+
+  // Función para formatear los datos antes de mostrarlos
+  function formatData(data) {
+    var formattedData = "";
+
+    // Ejemplo: convertir los datos en una lista con viñetas
+    formattedData += "";
+    var i = 1;
+    for (var key in data) {
+      if (data.hasOwnProperty(key)) {
+        formattedData += "<div><strong>" + key + ":</strong> <span id=" + i + ">" + data[key] + "</span>" + "\n";
+        i++;
+      }
+    }
+    formattedData += "</div>";
+
+    // Ejemplo: convertir los datos en una tabla
+    // formattedData += "<table>";
+    // for (var key in data) {
+    //   if (data.hasOwnProperty(key)) {
+    //     formattedData += "<tr><td><strong>" + key + "</strong></td><td>" + data[key] + "</td></tr>";
+    //   }
+    // }
+    // formattedData += "</table>";
+
+    return formattedData;
+  }
+</script>

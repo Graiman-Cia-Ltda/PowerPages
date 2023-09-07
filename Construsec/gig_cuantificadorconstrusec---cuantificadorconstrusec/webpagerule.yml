@@ -1,0 +1,26 @@
+- adx_name: Grant Change to Content
+  adx_right: 1
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: 11b8ad5b-c641-ee11-be6e-002248de6701
+- adx_name: Restrict Read on Home
+  adx_right: 2
+  adx_scope: 2
+  adx_webpageaccesscontrolrule_webrole:
+  - df75465e-c641-ee11-be6e-002248e0b395
+  adx_webpageaccesscontrolruleid: c6354199-9455-e86b-41d6-16e59d49697c
+  adx_webpageid: 03b8ad5b-c641-ee11-be6e-002248de6701
+- adx_name: Grant Change to Administrators
+  adx_right: 1
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: cc75465e-c641-ee11-be6e-002248e0b395
+  adx_webpageid: 03b8ad5b-c641-ee11-be6e-002248de6701
+- adx_name: Restrict Read on Contact us
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: e35bccf4-7b55-e0cc-9334-4548e6a27d8e
+  adx_webpageid: 4de2f55e-c641-ee11-be6e-000d3a892db5
+  statecode: 1
+  statuscode: 2

@@ -1,0 +1,110 @@
+
+$presetThemeId: 656c3ab7-eba6-4496-8de6-2e8c22310f98;
+$isModified: true;
+
+$name: DARK_BLUE;
+
+$color1: #ffffff;
+$color2: #ffffff;
+$color3: #C8C8C8;
+$color4: #00779F;
+$color5: #F4FCFE;
+$color6: #0f1e2b;
+$color7: #000000;
+$color8: #000000;
+$color9: #005E86;
+$color10: #008996;
+$color11: rgba(0, 137, 150, 0.52);
+$color12: #f2fbfc;
+
+$primaryColor: $color2;
+$headerColor: $color1;
+$headerMenuTextColor: $color7;
+$headerMenuHoverColor: $color5;
+$bodyBackground: $color1;
+$footerColor: $color6;
+$footerTextColor: $color7;
+$footerTextFont: Arial;
+$footerTextWeight: 400;
+$footerTextSize: 16;
+
+$headerMenuTextFont: Arial;
+$headerMenuTextWeight: 400;
+$headerMenuTextSize: 20;
+$headerMenuHoverStyle: Plain text;
+
+$siteTitlecolor: $color7;
+$siteTitlefont: Arial;
+$siteTitleweight: 400;
+$siteTitlesize: 30;
+
+$h1font: Arial;
+$h1weight: 400;
+$h1size: 40;
+$h1color: $color8;
+
+$h2font: Arial;
+$h2weight: 400;
+$h2size: 36;
+$h2color: $color8;
+
+$h3font: Arial;
+$h3weight: 400;
+$h3size: 24;
+$h3color: $color8;
+
+$h4font: Arial;
+$h4weight: 700;
+$h4size: 24;
+$h4color: $color8;
+
+$h5font: Arial;
+$h5weight: 700;
+$h5size: 14;
+$h5color: $color8;
+
+$p1font: Arial;
+$p1weight: 400;
+$p1size: 20;
+$p1color: $color8;
+
+$p2font: Arial;
+$p2weight: 400;
+$p2size: 16;
+$p2color: $color8;
+
+$afont: Arial;
+$aweight: 400;
+$asize: 14;
+$atextcolor: $color8;
+$astyle: Underline;
+$aonhoverstyle: Underline;
+$aonhovertextcolor: $color8;
+
+$button1style: Outline;
+$button1radius: 5;
+$button1font: Arial;
+$button1weight: 700;
+$button1size: 14;
+$button1fillcolor: $color8;
+$button1textcolor: $color7;
+$button1onhoverstyle: Filled;
+$button1onhoverfillcolor: $color3;
+$button1onhovertextcolor: $color8;
+
+$button2style: Outline;
+$button2radius: 2;
+$button2font: Arial;
+$button2weight: 600;
+$button2size: 14;
+$button2fillcolor: $color3;
+$button2textcolor: $color8;
+$button2onhoverstyle: Filled;
+$button2onhoverfillcolor: $color1;
+$button2onhovertextcolor: $color8;
+
+$sectioncolumnmargintopbottom: 60;
+$sectioncolumnmarginunit: px;
+$sectioncolumnpaddingunit: px;
+$sectioncolumncontentpadding: 16;
+

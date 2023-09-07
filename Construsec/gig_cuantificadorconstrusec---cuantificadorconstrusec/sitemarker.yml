@@ -1,0 +1,26 @@
+- adx_name: Poll Archives
+  adx_sitemarkerid: 0a25bd58-c641-ee11-be6e-000d3a892db5
+- adx_name: Home
+  adx_pageid: 03b8ad5b-c641-ee11-be6e-002248de6701
+  adx_sitemarkerid: 0b25bd58-c641-ee11-be6e-000d3a892db5
+- adx_name: Event Feedback
+  adx_sitemarkerid: e0b7ad5b-c641-ee11-be6e-002248de6701
+- adx_name: Knowledge Base Search Results
+  adx_sitemarkerid: e1b7ad5b-c641-ee11-be6e-002248de6701
+- adx_name: Knowledge Base
+  adx_sitemarkerid: e2b7ad5b-c641-ee11-be6e-002248de6701
+- adx_name: Profile
+  adx_pageid: bc75465e-c641-ee11-be6e-002248e0b395
+  adx_sitemarkerid: e6184e58-c641-ee11-be6e-002248e0b395
+- adx_name: Page Not Found
+  adx_pageid: ba75465e-c641-ee11-be6e-002248e0b395
+  adx_sitemarkerid: e8184e58-c641-ee11-be6e-002248e0b395
+- adx_name: Search
+  adx_pageid: 50e2f55e-c641-ee11-be6e-000d3a892db5
+  adx_sitemarkerid: e9184e58-c641-ee11-be6e-002248e0b395
+- adx_name: Access Denied
+  adx_pageid: 02b8ad5b-c641-ee11-be6e-002248de6701
+  adx_sitemarkerid: ea184e58-c641-ee11-be6e-002248e0b395
+- adx_name: Default Offline Page
+  adx_pageid: 0cb8ad5b-c641-ee11-be6e-002248de6701
+  adx_sitemarkerid: eb184e58-c641-ee11-be6e-002248e0b395

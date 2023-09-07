@@ -1,0 +1,326 @@
+<style>
+  /* CSS for the spinner */
+  .spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Semi-transparent black background */
+    display: none;
+    z-index: 9999;
+    /* Ensure the overlay is on top of other elements */
+  }
+
+  .spinner-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+
+  .spinner {
+    width: 150px;
+    height: 150px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #034c7c;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+  }
+
+  .responseTable {
+    text-align: center;
+  }
+
+  th {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  td {
+    text-align: center;
+    padding-top: 3px;
+  }
+
+  /* CSS animation for spinning */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+<h2 style="text-align: center;">Detalle del pedido</h2>
+<div class="row sectionBlockLayout sectionPrimaryColor text-left"
+  style="display: flex; flex-wrap: wrap; height: 15px; padding: 8px; margin: 0px;">
+  <div class="container" style="display: flex; flex-wrap: wrap;"></div>
+</div>
+
+<div class="row sectionBlockLayout text-left"
+  style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 361px;">
+  <div class="container" style="display: flex; flex-wrap: wrap;">
+    <div class="col-md-12 columnBlockLayout"
+      style="flex-grow: 1; min-width: 250px; word-break: break-word; display: flex; flex-direction: column;">
+      <div style="flex: 1; padding: 10px;"><label for="input3"
+          style="display: block; margin-bottom: 5px; text-align: left;">Observaciones:</label><input type="text"
+          id="input3" name="input3" style="width: 100%; padding: 5px; margin-bottom: 10px;" readonly="true" />
+        <label for="input1" style="display: block; margin-bottom: 5px; text-align: left;">Motivo de
+          cancelacion:</label><input type="text" id="input1" name="input1"
+          style="width: 100%; padding: 5px; margin-bottom: 10px;" readonly="true" />
+      </div>
+      <table id="responseTableDetalle" style="border: 1px solid #ccc;">
+        <!--Encabezados-->
+        <thead>
+          <tr>
+            <th align="center"
+              style="text-align: center; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 5px; padding-bottom: 5px; width: 15%;">
+              Codigo</th>
+            <th align="center"
+              style="text-align: center; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 5px; padding-bottom: 5px; width: 35%;">
+              Descripcion</th>
+            <th align="center"
+              style="text-align: center; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 5px; padding-bottom: 5px; width: 15%;">
+              Cantidad</th>
+            <th align="center"
+              style="text-align: center; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 5px; padding-bottom: 5px; width: 15%;">
+              Precio Unitario</th>
+            <th align="center"
+              style="text-align: center; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 5px; padding-bottom: 5px; width: 15%;">
+              Total</th>
+            <!-- Add other column headers as needed -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table body will be filled with data dynamically using JavaScript -->
+        </tbody>
+      </table>
+      <table id="totalTableDetallePedidos">
+        <!--Cada una de las filas-->
+        <tbody>
+          <tr style="height: 1px;">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button id="backButton" class="btn btn-primary" style="width:200px; height: 30px; margin-left: 10px;">Volver a Mis
+      Pedidos</button>
+  </div>
+</div>
+<div id="overlay" class="spinner-overlay"
+  style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.6); display: none; z-index: 9999;">
+</div>
+<div id="spinner" class="spinner-container"
+  style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none;">
+  <div class="spinner"
+    style="width: 150px; height: 150px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; border-top-width: 4px; border-top-style: solid; border-top-color: rgb(3, 76, 124); border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; animation-duration: 2s; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: infinite; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: spin; animation-timeline: auto;">
+  </div>
+</div>
+
+<script>
+
+  const backButton = document.getElementById("backButton");
+  backButton.addEventListener("click", function () {
+    window.history.back();
+  });
+  const urlParams = new URLSearchParams(window.location.search);
+  const variableId = urlParams.get('idPedido');
+  const indice = urlParams.get('cont');
+  document.addEventListener("DOMContentLoaded", function () {
+    obtenerDetallePedido(indice, variableId);
+  });
+
+  function populateCampoRazon(data, id) {
+    const campo = document.getElementById(id);
+    campo.value = data.razonCancelacion;
+  }
+
+
+  function populateTableDetalle(data) {
+
+    const tableBody = document.querySelector("#responseTableDetalle tbody");
+    const tableBodyTotal = document.querySelector("#totalTableDetallePedidos tbody");
+    var cont = 0;
+    var suma = 0;
+
+    // Loop through the data and create rows for the table
+    data.forEach(item => {
+      const row = document.createElement("tr");
+
+      // Assuming the WS response has 'id' and 'name' properties
+      const codigo = document.createElement("td");
+      codigo.textContent = item.codigo;
+      row.appendChild(codigo);
+
+      const descripcion = document.createElement("td");
+      descripcion.textContent = item.descripcion;
+      row.appendChild(descripcion);
+
+      const cantidadSolicitada = document.createElement("td");
+      cantidadSolicitada.textContent = item.cantidadSolicitada;
+      row.appendChild(cantidadSolicitada);
+
+      const precioUCell = document.createElement("td");
+      if (item.precioU === null) {
+        precioUCell.textContent = 0;
+        row.appendChild(precioUCell);
+      } else {
+        precioUCell.textContent = item.precioU.toLocaleString("en-US", { style: "currency", currency: "USD" });
+      row.appendChild(precioUCell);
+      }
+
+
+      const precioTCell = document.createElement("td");
+      if (item.precioT === null) {
+        precioTCell.textContent = 0;
+        row.appendChild(precioTCell);
+      } else {
+        precioTCell.textContent = item.precioT.toLocaleString("en-US", { style: "currency", currency: "USD" });
+        row.appendChild(precioTCell);
+      }
+
+
+      tableBody.appendChild(row);
+      cont++;
+      suma += item.precioT;
+    }
+    );
+    if (cont === 0) {
+      const row = document.createElement("tr");
+      const cell = document.createElement("td");
+      cell.colSpan = 5;
+      cell.textContent = "No existe información";
+      row.appendChild(cell);
+      tableBody.appendChild(row);
+    } else {
+      const row = document.createElement("tr");
+      const etqTotal = document.createElement("td");
+      etqTotal.textContent = "Total:";
+      etqTotal.colSpan = 4;
+      etqTotal.style.fontWeight = "bold";
+      etqTotal.style.textAlign = "end";
+      etqTotal.style.paddingRight = "8%";
+      row.appendChild(etqTotal);
+      const total = document.createElement("td");
+      total.textContent = suma.toLocaleString("en-US", { style: "currency", currency: "USD" });
+      total.style.width = "15%"
+      row.appendChild(total);
+
+      /*const row = document.createElement("tr");
+      const total = document.createElement("td");
+      total.textContent = suma;
+      total.style.width = "15%"
+      row.appendChild(total);*/
+      tableBodyTotal.appendChild(row);
+    }
+
+  }
+
+
+  function cargarPedidos() {
+    showSpinner();
+    var correoDist = "{{user.emailaddress1}}";
+    var esquema =
+      '{"correo": "' + correoDist + '","idPedido": "' + variableId + '"}';
+    var url =
+      "https://prod-09.brazilsouth.logic.azure.com:443/workflows/f29fad0f72b54962927bed7f0027061c/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=uB9GVTmMFM3fCEmU7REQSVUOew20O-M8Y0eqk3JVJsE";
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: esquema,
+    })
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(
+            "Error en la solicitud. Estado: " + response.status
+          );
+          hideSpinner();
+        }
+      })
+      .then(function (responseData) {
+        console.log(responseData);
+        console.log(responseData[0].observaciones);
+        const campo = document.getElementById("input3");
+        campo.value = responseData[0].observaciones;
+        const campo2 = document.getElementById("input1");
+        const label2 = document.querySelector(`label[for="input1"]`);
+        const variableRazon = responseData[0].razonCancelacion;
+        if (variableRazon === null) {
+          campo2.style.display = 'none';
+          label2.style.display = 'none';
+        } else {
+          campo2.value = variableRazon;
+        }
+
+        hideSpinner();
+      });
+  }
+
+  function obtenerDetallePedido(index, idPedido) {
+    showSpinner();
+    var esquema =
+      '{"idPedido": "' + idPedido + '"}';
+    console.log('idPedido: ' + idPedido);
+    var url =
+      "https://prod-27.brazilsouth.logic.azure.com:443/workflows/0394818b140e4df4a9b41ba9afd82161/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=dVuBVvgvLXxiRW002xoTOD4lfmn41HU6tlpyi37h3YE";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: esquema,
+    })
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(
+            "Error en la solicitud. Estado: " + response.status
+          );
+          hideSpinner();
+        }
+      })
+      .then(function (responseData) {
+
+
+        populateTableDetalle(responseData);
+        cargarPedidos();
+        hideSpinner();
+      });
+  }
+
+  function showSpinner() {
+    // Get the spinner element by ID
+    var spinner = document.getElementById('spinner');
+    var overlay = document.getElementById('overlay');
+    // Show the spinner by changing its display property
+    spinner.style.display = 'block';
+    overlay.style.display = 'block';
+  }
+
+  function hideSpinner() {
+    var spinner = document.getElementById('spinner');
+    spinner.style.display = 'none';
+    var overlay = document.getElementById('overlay');
+    overlay.style.display = 'none';
+  }
+
+</script>

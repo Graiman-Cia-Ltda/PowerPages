@@ -1,0 +1,25 @@
+- adx_name: Grant Change to Administrators
+  adx_right: 1
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: 18755cb3-c615-ee11-9cbe-000d3a892db5
+  adx_webpageid: 561045b2-c615-ee11-9cbe-002248de6701
+- adx_name: Grant Change to Content
+  adx_right: 1
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole: []
+  adx_webpageaccesscontrolruleid: 1c755cb3-c615-ee11-9cbe-000d3a892db5
+- adx_name: Restrict Read on Mis Pedidos
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - 601045b2-c615-ee11-9cbe-002248de6701
+  adx_webpageaccesscontrolruleid: 4081f46a-dc30-0ced-005e-658faca3ce5b
+  adx_webpageid: 20cf45d7-1bfe-f466-add0-9c7b8464c470
+- adx_name: Restrict Read on Carrito
+  adx_right: 2
+  adx_scope: 1
+  adx_webpageaccesscontrolrule_webrole:
+  - 601045b2-c615-ee11-9cbe-002248de6701
+  adx_webpageaccesscontrolruleid: 55c388b1-60dd-f18c-c94c-a19485bd5a9b
+  adx_webpageid: 623c5b6a-246c-4054-a7a8-82b3d55564d1

@@ -1,0 +1,377 @@
+<div data-ppid="68caf853-0b26-2be7-a086-95bc88bd6d1b" class="row sectionBlockLayout sectionPrimaryColor" style="display: flex; flex-wrap: wrap; height: 15px; min-height: 15px; padding: 8px; margin: 0px;"></div>
+<div data-ppid="d8700739-ff85-8393-9975-151749fd2a48" class="row sectionBlockLayout text-left" style='display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 361px; background: url("/wave-background.png");'>
+  <div data-ppid="e14f4454-bca2-ad38-8779-9cdfbe3c8b65" class="container" style="display: flex; flex-wrap: wrap;">
+    <div data-ppid="09475c23-10d2-0a6d-820f-009845d2a753" class="col-md-12 columnBlockLayout" style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px; padding: 16px; margin: 60px 0px;">
+      <h1 data-ppid="9943198f-52cf-d554-193e-114cabbb91d5">Disponibilidad de productos</h1>
+      <p data-ppid="3406bc51-3c0a-c41b-cfbd-2607b1e71ab8">Ingrese con su usuario y contraseña para visualizar la lista.&nbsp;</p>
+      {% include 'entity_list' key: 'Active DisponibilidadProductos (2)' %}
+      <div data-ppid="1aee7e8f-3489-b541-3423-dfe9509de008" class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 15px;"></div>
+      <div data-ppid="218e205d-7608-96be-0bdb-4e3907dd2c6a" class="row sectionBlockLayout" style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 15px;"></div>
+      <p data-ppid="bc5c44fb-ce16-3864-d453-44f5acdcc669" class="smallText" style="text-align: left;">*La consulta de disponibilidad puede verse afectada por consultas en simultáneo o reservas internas.</p>
+    </div>
+  </div>
+</div>
+<div id="myModal" class="modal" style="background-color: rgb(255, 255, 255, 0.85);">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 data-ppid="6b2d5b27-406e-acd3-42bb-ae963afc926c" class="modal-title">Datos obtenidos</h5>
+        <button type="button" data-dismiss="modal" id="botonCerrar" data-ppid="6d2ee6c5-7f33-f5b9-9c3e-291de8f2d5f9" class="close">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="modalBody"><!-- Aquí se mostrarán los datos obtenidos --></div>
+      </div>
+      <div class="modal-footer"><button type="button" data-dismiss="modal" id="btn-info" data-ppid="b7625003-4b8b-cf7d-0e84-5eb007a3b30d" class="btn btn-secondary">Más información</button><button type="button" data-dismiss="modal" id="btn-carrito" data-ppid="5baefcdb-e474-5901-2533-ce0d6cf7df55" class="btn btn-secondary">Agregar al carrito</button></div>
+    </div>
+  </div>
+</div>
+<div data-ppid="812a8385-a136-0149-7cc6-b6fffdaf07ce" class="row sectionBlockLayout text-left" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: 374px; padding: 8px; background-color: rgb(255, 255, 255);">
+  <div data-ppid="f37bf9b6-60a4-db19-182c-71e3de0d4931" class="container" style="display: flex; flex-wrap: wrap;"><div data-ppid="47e79c5d-286f-3d4c-1275-d6ae5cc9c64d" class="col-md-12 columnBlockLayout" style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px; padding: 16px; margin: 60px 0px;"></div></div>
+</div>
+<div id="overlay" data-ppid="dfa5a1dc-5d0d-5c33-ee53-0e9e4c503a69" class="spinner-overlay" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.6); display: none; z-index: 9999;"></div>
+<div id="spinner" class="spinner-container" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none;"><div data-ppid="5739002d-1c86-6a2b-93a9-9835498d4ad6" class="spinner" style="width: 150px; height: 150px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; border-top-width: 4px; border-top-style: solid; border-top-color: rgb(3, 76, 124); border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; animation-duration: 2s; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: infinite; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: spin; animation-timeline: auto;"></div></div>
+<script data-ppid="0f2e0b47-cbbd-57c7-49de-618c39d7086b">
+
+  //********* cuando da enter **********************************************
+  /*let input = document.querySelector('#q');
+  input.addEventListener('keyup', function (event) {
+    var keycode = event.keyCode || event.which;
+    alert(keycode.textContent);
+    alert(keycode);
+    if (keycode == 13) {
+      alert("Enter!");
+    }
+  });*/
+  //********* cuando da enter **********************************************
+  var band = false;
+  window.addEventListener("load", function () {
+
+    band = true;
+    //******** cuando da click en el ícono de lupa  *************************
+    var botonFiltro = document.querySelector(".btn-hg");
+    botonFiltro.addEventListener("click", function () {
+      crearBoton();
+    });
+
+    var campoBusqueda = document.getElementsByClassName("query form-control")[0];
+    campoBusqueda.addEventListener("keydown", function (event) {
+      if (event.keyCode === 13) {
+        // Aquí puedes poner el código que deseas ejecutar cuando se presiona Enter
+        crearBoton();
+      }
+    });
+
+
+    //******** cuando da click en el ícono de lupa  *************************
+    //******** cuando carga la página ***************************************
+    if (band) {
+      //alert('Bandera: '+band)
+      crearBoton();
+    }
+
+    // 5000 milisegundos = 5 segundos
+  });
+  //******** cuando carga la página ***************************************
+  function crearBoton() {
+    setTimeout(function () {
+      //console.log("Han pasado 5 segundos");
+      let lecturaBoton = document.getElementById('btnPrueba');
+      let table = document.querySelector("table tbody");
+      let rows = table.rows;
+      for (let i = 0; i <= rows.length - 1; i++) {
+        let cols = rows[i].cells;
+        var lastCol = rows[i].insertCell(-1);
+        let button = document.createElement('button');
+        let td = document.createElement("td");
+        rows[i].setAttribute('id', rows[i].cells[0].innerText);
+        button.style.width = '60px'; // Establecer el ancho del botón
+        button.style.height = '40px';
+        button.style.backgroundColor = 'rgba(255,255,255,0)';
+        button.style.border = '0px';
+        //imagen lupa
+        let img = document.createElement('img');
+        img.src = '/search-interface-symbol.png';
+        img.alt = 'Buscar';
+        img.style.width = '20px'; // Establecer el ancho de la imagen
+        img.style.height = '20px'; // Establecer la altura de la imagen
+        //icono buscar
+        let span = document.createElement('span');
+        button.appendChild(img);
+        button.appendChild(span);
+        button.setAttribute('id', 'btn' + rows[i].cells[0].innerText);
+        var fila = rows[i].cells[0].innerText;
+        var descProd = rows[i].cells[1].innerText;
+        var precioDis = rows[i].cells[2].innerText;
+        button.setAttribute('onclick', `ejecucionFlujo('${fila}', '${descProd}', '${precioDis}')`);
+        lastCol.appendChild(button);
+
+      }
+
+      var ulLista = document.getElementsByClassName("pagination")[0];
+      ulLista.addEventListener("click", function () {
+        if (event.target.tagName === "A" || event.target.tagName === "LI") {
+          // Aquí puedes poner el código que deseas ejecutar cuando se hace clic en un elemento li
+          crearBoton();
+        }
+      });
+    }, 900);
+  }
+  // Declarar las variables fuera del alcance de la función ejecucionFlujo
+  var cantidadUsuario;
+  var data;
+
+  function errorImg(img) {
+
+    // Si la imagen no se carga correctamente, establecer imagen alternativa
+    img.src = "/no-image.png";
+    img.height = "100";
+    img.width = "100";
+    img.style.borderRadius = "0px";
+    img.style.boxShadow = "0px 0px 0px rgba(0, 0, 0, 0)";
+
+  }
+
+  function ejecucionFlujo(codigoProducto, descProducto, precioDis) {
+    showSpinner();
+    var correoDist = "cre17_codigodistribuidor";
+    var esquema =
+      '{"distribuidor": "' + correoDist + '","item": "' + codigoProducto + '", "descripcion": "' + descProducto + '"}';
+    var url =
+      "https://prod-24.brazilsouth.logic.azure.com:443/workflows/3c2ce445dd4343969230a2eaf457537f/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=n25O6Dp1DOBEhC00EEsktcnnRI1GHy_qcdSJnF3FO3E";
+
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: esquema,
+    })
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(
+            "Error en la solicitud. Estado: " + response.status
+          );
+          hideSpinner();
+        }
+      })
+      .then(function (responseData) {
+        hideSpinner();
+        data = responseData; // Asignar el valor a la variable data
+
+        console.log(data);
+
+        var modalBody = document.getElementById("modalBody");
+        //imagen
+        //imagenItem = '<img src="https://www.graiman.com/sites/default/files/styles/156x156/public/productos-texturas/'+codigoProducto+'.png" alt="Sin imagen" id="imagenItem" class="imagenItem">';
+
+        modalBody.innerHTML = formatData(data, precioDis, codigoProducto);
+
+        //imagen
+        /* var img = document.getElementById("imagenItem");
+        img.onerror = errorImg(img); */
+
+        //input
+        cantidadUsuario = document.createElement("input");
+        cantidadUsuario.setAttribute("type", "number");
+        cantidadUsuario.setAttribute(
+          "placeholder",
+          "Ingrese la cantidad solicitada"
+        );
+        cantidadUsuario.setAttribute('id', 'cantidad');
+        cantidadUsuario.style.width = "300px";
+        modalBody.appendChild(cantidadUsuario);
+        var modalElement = document.getElementById("myModal");
+        modalElement.style.display = "block";
+        modalElement.classList.add("show");
+        modalElement.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+
+
+        var botonCerrar = document.getElementById("botonCerrar");
+        botonCerrar.addEventListener("click", function () {
+          closeModal();
+        });
+
+        var botonInformacion = document.getElementById("btn-info");
+        botonInformacion.setAttribute('onclick', `masInfo("${descProducto.split(" ")[0]}")`);
+
+        var botonAgregarCarrito = document.getElementById("btn-carrito");
+        botonAgregarCarrito.setAttribute('onclick', `comparar()`);
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    // Función para cerrar la ventana modal
+    function closeModal() {
+
+      var modalBody = document.getElementById("modalBody");
+      var modalElement = document.getElementById("myModal");
+
+      cantidadUsuario.value = "";
+      modalBody.innerHTML = "";
+      modalElement.style.display = "none";
+      modalElement.classList.remove("show");
+      modalElement.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+    }
+
+    //Función para comparar los valores de la cantidad y lo que digita el usuario
+    // function compareValues() {
+    // var inputValue = cantidadUsuario.value;
+    //var columnName = "disponibilidad";
+    //return inputValue <= data[columnName];
+    //}
+  }
+
+  function masInfo(nombre) {
+    window.open("https://www.graiman.com/familia/" + nombre, "_blank");
+  }
+
+  function showSpinner() {
+    // Get the spinner element by ID
+    var spinner = document.getElementById('spinner');
+    var overlay = document.getElementById('overlay');
+    // Show the spinner by changing its display property
+    spinner.style.display = 'block';
+    overlay.style.display = 'block';
+  }
+
+  function hideSpinner() {
+    var spinner = document.getElementById('spinner');
+    spinner.style.display = 'none';
+    var overlay = document.getElementById('overlay');
+    overlay.style.display = 'none';
+  }
+
+  function closeModalExt() {
+    var modalBody = document.getElementById("modalBody");
+    var modalElement = document.getElementById("myModal");
+    cantidadUsuario.value = "";
+    modalBody.innerHTML = "";
+    modalElement.style.display = "none";
+    modalElement.classList.remove("show");
+    modalElement.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+  }
+
+  function comparar() {
+    var cantidadIng = document.getElementById('cantidad').value;
+    var disponible = document.getElementById('3').textContent;
+    // alert('cantidadIngresada: '+Number(cantidadIng)+'\ndisponible: '+Number(disponible));
+    //var expresionRegular = /^\d+(\.\d{1,2})?$/; // Expresión regular para números con hasta 2 decimales
+    //cantidadUsuario.setAttribute('pattern', expresionRegular.source);
+    // alert('Ingreso funcion comparar');
+    //alert(cantidadIng + '\nDisponible   ' + disponible);
+    if (Number(cantidadIng) <= Number(disponible)) {
+      guardarCarrito();
+      closeModalExt();
+    } else {
+      alert("Ingrese una cantidad válida");
+    }
+  }
+
+
+  // Función para formatear los datos antes de mostrarlos
+  function formatData(data, precioDis, codigoProducto) {
+
+    var formattedData = "";
+    var etiquetaSaldo = "";
+
+    // Ejemplo: convertir los datos en una lista con viñetas
+    formattedData += '<div class="image-container"><img src="https://www.graiman.com/sites/default/files/styles/156x156/public/productos-texturas/' + codigoProducto.slice(0, -1) + 'E.png" alt="Sin imagen" id="imagenItem" class="imagenItem"></div>';
+    var i = 1;
+    for (var key in data) {
+      if (key != "saldo") {
+        if (data.hasOwnProperty(key)) {
+          formattedData += "<div><strong>" + capitalizeString(key) + ":</strong> <span id=" + i + ">" + data[key] + "</span>" + "\n";
+          i++;
+        }
+      } else {
+        if (data[key] === "SI") {
+          etiquetaSaldo = "* Precio especial por ser saldo de producto"
+        }
+      }
+
+    }
+    formattedData += "<div><span id=" + i + " style='font-size: 9px;'>" + etiquetaSaldo + "</span>" + "\n";
+    formattedData += "<br></div>";
+
+    // Ejemplo: convertir los datos en una tabla
+    // formattedData += "<table>";
+    // for (var key in data) {
+    //   if (data.hasOwnProperty(key)) {
+    //     formattedData += "<tr><td><strong>" + key + "</strong></td><td>" + data[key] + "</td></tr>";
+    //   }
+    // }
+    // formattedData += "</table>";
+
+    return formattedData;
+  }
+
+  function capitalizeString(str) {
+    var words = str.split('_'); // Split the input string into words using underscores
+    var titleCaseWords = words.map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1); // Capitalize the first letter of each word
+    });
+    var titleCaseString = titleCaseWords.join(' '); // Join the words back together with spaces
+    return titleCaseString;
+  }
+
+  function guardarCarrito() {
+
+    //alert("Flujo carrito");
+    var cantidadIng = document.getElementById('cantidad').value;
+    console.log(cantidadIng);
+    var disponible = document.getElementById('3').textContent;
+    var codigoProducto = document.getElementById('1').textContent;
+    var nombreProducto = document.getElementById('2').textContent;
+    var precioDis = document.getElementById('4').textContent;
+    var correoDist = "{{user.emailaddress1}}";
+    console.log('Disponible ' + disponible);
+    console.log('codigoProducto ' + codigoProducto);
+    console.log('nombreProducto ' + nombreProducto);
+    console.log('correoDist ' + correoDist);
+    var esquema =
+      '{"correoUser": "' + correoDist + '","codProducto": "' + codigoProducto + '","descProducto": "' + nombreProducto + '","cantSolicitada": ' + cantidadIng + ',"disponibilidad": ' + disponible + ',"precio": ' + precioDis + '}';
+    var url = "https://prod-05.brazilsouth.logic.azure.com:443/workflows/67701d5250894272b5a19ba6300e79be/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=bz3loB6y_vP9q1US6CQ7fumD-amFUH7AM11uRoYSmZM";
+    if (cantidadIng === "") {
+      alert("Ingrese una cantidad");
+    }
+    else {
+      showSpinner();
+      fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: esquema,
+      })
+        .then(function (response) {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error(
+              "Error en la solicitud. Estado: " + response.status
+            );
+            hideSpinner();
+          }
+        })
+        .then(function (responseData) {
+          data = responseData; // Asignar el valor a la variable data
+          hideSpinner();
+          console.log(data);
+          alert("Item añadido al carrito")
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+  }
+</script>

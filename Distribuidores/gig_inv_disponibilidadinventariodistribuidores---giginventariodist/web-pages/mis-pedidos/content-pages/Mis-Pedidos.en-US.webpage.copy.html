@@ -1,0 +1,378 @@
+<style>
+  /* CSS for the spinner */
+  .spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Semi-transparent black background */
+    display: none;
+    z-index: 9999;
+    /* Ensure the overlay is on top of other elements */
+  }
+
+  .spinner-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+
+  .spinner {
+    width: 150px;
+    height: 150px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #034c7c;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+  }
+
+  .responseTable {
+    text-align: center;
+  }
+
+
+  th {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  td {
+    text-align: center;
+    padding-top: 3px;
+  }
+
+  /* CSS animation for spinning */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+<h2 style="text-align: center;">Mis Pedidos</h2>
+<div class="row sectionBlockLayout text-left"
+  style="display: flex; flex-wrap: wrap; margin: 0px; min-height: auto; padding: 8px;">
+  <div class="container" style="display: flex; flex-wrap: wrap;">
+    <div class="col-md-12 columnBlockLayout"
+      style="flex-grow: 1; display: flex; flex-direction: column; min-width: 310px; word-break: break-word; padding: 16px; margin: 60px 0px; border: 1px solid rgb(204, 204, 204);">
+      <p></p>
+      <table id="responseTable" style="border: 1px solid #ccc;">
+        <!--Encabezados-->
+        <thead>
+          <tr>
+            <th align="center"
+              style="text-align: center; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 5px; padding-bottom: 5px; width: 15%;">
+              Pedido</th>
+            <th align="center"
+              style="text-align: center; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 5px; padding-bottom: 5px; width: 15%;">
+              Distribuidor</th>
+            <th align="center"
+              style="text-align: center; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 5px; padding-bottom: 5px; width: 35%;">
+              Cliente</th>
+            <th align="center"
+              style="text-align: center; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 5px; padding-bottom: 5px; width: 15%;">
+              Fecha</th>
+            <th align="center"
+              style="text-align: center; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 5px; padding-bottom: 5px; width: 20%;">
+              Estado</th>
+            <th align="center"
+              style="text-align: center; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); padding-top: 5px; padding-bottom: 5px; width: 20%;">
+            </th>
+            <!-- Add other column headers as needed -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table body will be filled with data dynamically using JavaScript -->
+        </tbody>
+      </table>
+      <table id="totalTablePedidos">
+        <!--Cada una de las filas-->
+        <tbody>
+          <tr style="height: 1px; margin: 80px;">
+            <td style="text-align: center; padding-top: 3px;" align="center">&nbsp;</td>
+            <td style="text-align: center; padding-top: 3px;" align="center">&nbsp;</td>
+            <td style="text-align: center; padding-top: 3px;" align="center">&nbsp;</td>
+            <td style="text-align: center; padding-top: 3px;" align="center">&nbsp;</td>
+            <td style="text-align: center; padding-top: 3px;" align="center">&nbsp;</td>
+            <td style="text-align: top; padding-top: 3px;" align="center">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row sectionBlockLayout"
+        style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 15px;"></div>
+      <div class="row sectionBlockLayout"
+        style="display: flex; flex-wrap: wrap; padding: 8px; margin: 0px; min-height: 15px;"></div>
+      <!--<button type="button" value="/" id="botonConfirmar" class="button1" style="margin-left: auto; margin-right: 0; min-width: 150px; min-height: 50px; width: fit-content;">Confirmar pedido</button>-->
+    </div>
+  </div>
+  <section class="banner"></section>
+</div>
+<div id="overlay" class="spinner-overlay"
+  style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.6); display: none; z-index: 9999;">
+</div>
+<div id="spinner" class="spinner-container"
+  style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none;">
+  <div class="spinner"
+    style="width: 150px; height: 150px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; border-top-width: 4px; border-top-style: solid; border-top-color: rgb(3, 76, 124); border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; animation-duration: 2s; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: infinite; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: spin; animation-timeline: auto;">
+  </div>
+</div>
+<script>
+  function limpiaCache() {
+    // Use the following methods to clear the cache:
+    // For modern browsers
+    console.log("limpia cache");
+    if (!location.hash) {
+      location.hash = "#reloading";
+      location.reload(true);
+    } else {
+      location.hash = "#reloaded";
+    }
+  }
+
+  // Evento que verifica si ya cargó toda la página
+  document.addEventListener('DOMContentLoaded', function () {
+    cargarPedidos();
+  });
+
+
+  /*function populateCampo(data, id) {
+    const campo = document.getElementById(id);
+
+    var USDollar = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    });
+
+    var credito = parseFloat(data.CupoCredito);
+    campo.value = USDollar.format(credito);
+  }
+
+  function populateCombo(data, id) {
+    const combo = document.getElementById(id);
+
+    data.forEach(item => {
+      const option = document.createElement("option");
+      option.setAttribute("data-value", item.correo);
+      option.textContent = item.nombre;
+
+      combo.appendChild(option)
+    })
+
+  }*/
+
+  function populateTable(data) {
+    const tableBody = document.querySelector("#responseTable tbody");
+    const tableBodyTotal = document.querySelector("#totalTablePedidos tbody");
+    var cont = 0;
+    var suma = 0;
+
+    // Loop through the data and create rows for the table
+    data.forEach(item => {
+      const row = document.createElement("tr");
+
+      const idPed = document.createElement("td");
+      idPed.textContent = item.id;
+      row.appendChild(idPed);
+
+      const distribuidor = document.createElement("td");
+      distribuidor.textContent = item.distribuidor;
+      row.appendChild(distribuidor);
+
+      const cliente = document.createElement("td");
+      cliente.textContent = item.cliente;
+      row.appendChild(cliente);
+      const fecha = document.createElement("td");
+      const fechaString = item.fecha;
+      const fechaDate = new Date(fechaString);
+      const dia = fechaDate.getDate();
+      const mes = fechaDate.getMonth() + 1;
+      const año = fechaDate.getFullYear();
+      const horas = fechaDate.getHours();
+      const minutos = fechaDate.getMinutes();
+      const minutosFormateados = minutos < 10 ? `0${minutos}` : minutos;
+      const fechaHoraFormateada = `${dia}/${mes}/${año} ${horas}:${minutosFormateados}`;
+
+      fecha.textContent = fechaHoraFormateada;
+      row.appendChild(fecha);
+
+      const estado = document.createElement("td");
+      estado.textContent = item.estado;
+      row.appendChild(estado);
+
+      const idPedido = item.id;
+      console.log("Id de pedido: " + idPedido);
+
+      const id = document.createElement("button");
+      id.textContent = 'Ver detalle';
+      id.setAttribute('id', cont);
+      id.setAttribute('class', 'btn btn-primary')
+      id.style.width = '200px'; // Establecer el ancho del botón
+      id.style.height = '23px';
+      id.style.fontSize = '12px';
+      id.style.lineHeight = ' normal'; /* Restaura la altura de línea normal para centrar verticalmente */
+      id.style.display = 'inline-block';
+      id.style.textAlign = 'center';
+      id.setAttribute('onclick', `redirigirConParametros('${cont}','${idPedido}')`);
+      row.appendChild(id);
+
+      // Add other cells for additional data if needed
+
+      // Append the row to the table body
+      tableBody.appendChild(row);
+      cont++;
+      suma += item.precioT;
+      console.log(cont);
+      console.log(suma);
+    }
+    );
+    if (cont === 0) {
+      const row = document.createElement("tr");
+      const cell = document.createElement("td");
+      cell.colSpan = 5;
+      cell.textContent = "No ha realizado pedidos";
+      row.appendChild(cell)
+      tableBody.appendChild(row)
+    } else {
+      const row = document.createElement("tr");
+      const etqTotal = document.createElement("td");
+      etqTotal.textContent = "Cantidad total de pedidos:";
+      etqTotal.colSpan = 4;
+      etqTotal.style.fontWeight = "bold";
+      etqTotal.style.textAlign = "end";
+      etqTotal.style.paddingRight = "8%";
+      row.appendChild(etqTotal);
+      const total = document.createElement("td");
+      total.textContent = cont;
+      total.style.width = "15%"
+      row.appendChild(total);
+      tableBodyTotal.appendChild(row);
+    }
+  }
+
+  function populateTableDetalle(data) {
+    const tableBody = document.querySelector("#responseTableDetalle tbody");
+    const tableBodyTotal = document.querySelector("#totalTableDetallePedidos tbody");
+    var cont = 0;
+    var suma = 0;
+
+    // Loop through the data and create rows for the table
+    /* data.forEach(item => {
+       const row = document.createElement("tr");
+
+       // Assuming the WS response has 'id' and 'name' properties
+       const codigo = document.createElement("td");
+       codigo.textContent = item.codigo;
+       row.appendChild(codigo);
+
+       const descripcion = document.createElement("td");
+       descripcion.textContent = item.descripcion;
+       row.appendChild(descripcion);
+
+       const cantidadSolicitada = document.createElement("td");
+       cantidadSolicitada.textContent = item.estado;
+       row.appendChild(cantidadSolicitada);
+
+       tableBody.appendChild(row);
+       cont++;
+       suma += item.precioT;
+       console.log(cont);
+       console.log(suma);
+     }
+     );*/
+    if (cont === 0) {
+      const row = document.createElement("tr");
+      console.log('Creo el row');
+      const cell = document.createElement("td");
+      console.log('Creo la cell');
+      cell.colSpan = 5;
+      cell.textContent = "No existe información";
+      row.appendChild(cell);
+      tableBody.appendChild(row);
+    } else {
+      console.log('Entro en el else');
+      const row = document.createElement("tr");
+      const total = document.createElement("td");
+      total.textContent = cont;
+      total.style.width = "15%"
+      row.appendChild(total);
+      tableBodyTotal.appendChild(row);
+    }
+  }
+
+  function cargarPedidos() {
+    showSpinner();
+    var correoDist = "{{user.emailaddress1}}";
+    var esquema =
+      '{"correo": "' + correoDist + '","idPedido": "0"}';
+    var url =
+      "https://prod-09.brazilsouth.logic.azure.com:443/workflows/f29fad0f72b54962927bed7f0027061c/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=uB9GVTmMFM3fCEmU7REQSVUOew20O-M8Y0eqk3JVJsE";
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: esquema,
+    })
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(
+            "Error en la solicitud. Estado: " + response.status
+          );
+          hideSpinner();
+        }
+      })
+      .then(function (responseData) {
+        populateTable(responseData);
+        hideSpinner();
+      });
+  }
+  function redirigirConParametros(cont, idPedido) {
+    showSpinner();
+    // Construye la URL con los parámetros
+    const url = `https://giginventariodist.powerappsportals.com/Detalle-Pedido?cont=${cont}&idPedido=${idPedido}`;
+    // Redirige a la nueva página
+    window.location.href = url;
+  }
+
+  function closeModal() {
+    var modalBody = document.getElementById("modalBody");
+    var modalElement = document.getElementById("myModal");
+
+    modalBody.innerHTML = "";
+    modalElement.innerHTML = "";
+    modalElement.style.display = "none";
+    modalElement.classList.remove("show");
+    modalElement.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+
+  }
+
+  function showSpinner() {
+    // Get the spinner element by ID
+    var spinner = document.getElementById('spinner');
+    var overlay = document.getElementById('overlay');
+    // Show the spinner by changing its display property
+    spinner.style.display = 'block';
+    overlay.style.display = 'block';
+  }
+
+  function hideSpinner() {
+    var spinner = document.getElementById('spinner');
+    spinner.style.display = 'none';
+    var overlay = document.getElementById('overlay');
+    overlay.style.display = 'none';
+  }
+</script>
