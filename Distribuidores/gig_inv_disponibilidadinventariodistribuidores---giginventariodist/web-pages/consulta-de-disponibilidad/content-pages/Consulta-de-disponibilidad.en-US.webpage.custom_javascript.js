@@ -12,6 +12,7 @@
   var band = false;
 
   document.addEventListener("DOMContentLoaded", function() {
+    crearBoton();
     // Aquí coloca el código que deseas ejecutar después de que se haya cargado el DOM
     console.log("El DOM ha cargado por completo");
 
@@ -19,10 +20,10 @@
 
       band = true;
       //******** cuando da click en el ícono de lupa  *************************
-      var botonFiltro = document.querySelector(".btn-hg");
+      /*var botonFiltro = document.querySelector(".btn-hg");
       botonFiltro.addEventListener("click", function () {
         crearBoton();
-      });
+      });*/
   
       var campoBusqueda = document.getElementsByClassName("query form-control")[0];
       campoBusqueda.addEventListener("keydown", function (event) {
