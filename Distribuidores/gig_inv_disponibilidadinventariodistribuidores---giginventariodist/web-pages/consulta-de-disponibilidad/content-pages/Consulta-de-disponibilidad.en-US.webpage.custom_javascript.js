@@ -20,10 +20,10 @@
 
       band = true;
       //******** cuando da click en el ícono de lupa  *************************
-      /*var botonFiltro = document.querySelector(".btn-hg");
+      var botonFiltro = document.querySelector(".btn-hg");
       botonFiltro.addEventListener("click", function () {
         crearBoton();
-      });*/
+      });
   
       var campoBusqueda = document.getElementsByClassName("query form-control")[0];
       campoBusqueda.addEventListener("keydown", function (event) {
