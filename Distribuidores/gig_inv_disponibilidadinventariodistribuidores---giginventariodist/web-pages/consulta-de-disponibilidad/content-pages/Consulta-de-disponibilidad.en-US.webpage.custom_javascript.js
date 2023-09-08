@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Asigna la propiedad aria-label
     elemento3.textContent = "Precio";
     elemento3.style.weight = "bold"; /* Hace que el texto sea negrita */
-    elemento4.style.size= "24px";
+    elemento3.style.size= "24px";
 
     crearBoton();
     // Aquí coloca el código que deseas ejecutar después de que se haya cargado el DOM
