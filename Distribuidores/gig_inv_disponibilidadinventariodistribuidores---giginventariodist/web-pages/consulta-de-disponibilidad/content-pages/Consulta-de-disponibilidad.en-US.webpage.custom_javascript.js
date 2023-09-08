@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
     var elemento1 = document.querySelector('[aria-label="CodigoProducto"]');
     // Asigna la propiedad aria-label
-    elemento1.textContent = "Codigo";
+    elemento1.textContent = "Código";
 
     var elemento2 = document.querySelector('[aria-label="NombreProducto"]');
     // Asigna la propiedad aria-label
-    elemento2.textContent = "Nombre";
+    elemento2.textContent = "Descripción";
 
     var elemento3 = document.querySelector('[aria-label="PrecioDistribuidor"]');
     // Asigna la propiedad aria-label
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //******** cuando da click en el ícono de lupa  *************************
     console.log("Antes de click");
     var botonFiltro = document.querySelector(".btn-hg");
-    alert(botonFiltro);
+    //alert(botonFiltro);
     botonFiltro.addEventListener("click", function () {
       console.log("Entró click");
       crearBoton();
