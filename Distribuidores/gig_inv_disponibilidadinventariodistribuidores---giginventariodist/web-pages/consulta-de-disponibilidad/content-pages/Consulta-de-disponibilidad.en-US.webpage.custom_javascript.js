@@ -1,14 +1,3 @@
-  //********* cuando da enter **********************************************
-  /*let input = document.querySelector('#q');
-  input.addEventListener('keyup', function (event) {
-    var keycode = event.keyCode || event.which;
-    alert(keycode.textContent);
-    alert(keycode);
-    if (keycode == 13) {
-      alert("Enter!");
-    }
-  });*/
-  //********* cuando da enter **********************************************
   var band = false;
 
   document.addEventListener("DOMContentLoaded", function() {
@@ -27,13 +16,13 @@
         crearBoton();
       });
   
-      var campoBusqueda = document.getElementsByClassName("query form-control")[0];
+      /*var campoBusqueda = document.getElementsByClassName("query form-control")[0];
       campoBusqueda.addEventListener("keydown", function (event) {
         if (event.keyCode === 13) {
           // Aquí puedes poner el código que deseas ejecutar cuando se presiona Enter
           crearBoton();
         }
-      });
+      });*/
   
   
       //******** cuando da click en el ícono de lupa  *************************
