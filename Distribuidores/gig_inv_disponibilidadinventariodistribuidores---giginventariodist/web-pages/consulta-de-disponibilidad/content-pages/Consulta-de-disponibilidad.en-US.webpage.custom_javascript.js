@@ -2,87 +2,90 @@ var band = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
-  crearBoton();
-  // Aquí coloca el código que deseas ejecutar después de que se haya cargado el DOM
-  console.log("El DOM ha cargado por completo");
-
-  //window.addEventListener("load", function () {
-
-  band = true;
-  //******** cuando da click en el ícono de lupa  *************************
-  console.log("Antes de click");
-  var botonFiltro = document.querySelector(".btn-hg");
-  alert(botonFiltro);
-  botonFiltro.addEventListener("click", function () {
-    console.log("Entró click");
+    var elemento = document.querySelector('[aria-label="CodigoProducto"]');
+    // Asigna la propiedad aria-label
+    elemento.setAttribute("aria-label", "Codigo");
     crearBoton();
-  });
+    // Aquí coloca el código que deseas ejecutar después de que se haya cargado el DOM
+    console.log("El DOM ha cargado por completo");
 
-  /*var campoBusqueda = document.getElementsByClassName("query form-control")[0];
-  campoBusqueda.addEventListener("keydown", function (event) {
-    if (event.keyCode === 13) {
-      // Aquí puedes poner el código que deseas ejecutar cuando se presiona Enter
+    //window.addEventListener("load", function () {
+
+    band = true;
+    //******** cuando da click en el ícono de lupa  *************************
+    console.log("Antes de click");
+    var botonFiltro = document.querySelector(".btn-hg");
+    alert(botonFiltro);
+    botonFiltro.addEventListener("click", function () {
+      console.log("Entró click");
       crearBoton();
-    }
-  });*/
+    });
+
+    /*var campoBusqueda = document.getElementsByClassName("query form-control")[0];
+    campoBusqueda.addEventListener("keydown", function (event) {
+      if (event.keyCode === 13) {
+        // Aquí puedes poner el código que deseas ejecutar cuando se presiona Enter
+        crearBoton();
+      }
+    });*/
 
 
-  //******** cuando da click en el ícono de lupa  *************************
-  //******** cuando carga la página ***************************************
-  /*if (band) {
-    alert('Bandera: ' + band)
-    crearBoton();
-  }*/
+    //******** cuando da click en el ícono de lupa  *************************
+    //******** cuando carga la página ***************************************
+    /*if (band) {
+      alert('Bandera: ' + band)
+      crearBoton();
+    }*/
 
-  // 5000 milisegundos = 5 segundos
-  //});
-}, 1000);
+    // 5000 milisegundos = 5 segundos
+    //});
+  }, 1000);
 });
 
 //******** cuando carga la página ***************************************
 function crearBoton() {
-    setTimeout(function () {
-      //console.log("Han pasado 5 segundos");
-      //let lecturaBoton = document.getElementById('btnPrueba');
-      let table = document.querySelector("table tbody");
-      let rows = table.rows;
-      for (let i = 0; i <= rows.length - 1; i++) {
-        let cols = rows[i].cells;
-        var lastCol = rows[i].insertCell(-1);
-        let button = document.createElement('button');
-        let td = document.createElement("td");
-        rows[i].setAttribute('id', rows[i].cells[0].innerText);
-        button.style.width = '60px'; // Establecer el ancho del botón
-        button.style.height = '40px';
-        button.style.backgroundColor = 'rgba(255,255,255,0)';
-        button.style.border = '0px';
-        //imagen lupa
-        let img = document.createElement('img');
-        img.src = '/search-interface-symbol.png';
-        img.alt = 'Buscar';
-        img.style.width = '20px'; // Establecer el ancho de la imagen
-        img.style.height = '20px'; // Establecer la altura de la imagen
-        //icono buscar
-        let span = document.createElement('span');
-        button.appendChild(img);
-        button.appendChild(span);
-        button.setAttribute('id', 'btn' + rows[i].cells[0].innerText);
-        var fila = rows[i].cells[0].innerText;
-        var descProd = rows[i].cells[1].innerText;
-        var precioDis = rows[i].cells[2].innerText;
-        button.setAttribute('onclick', `ejecucionFlujo('${fila}', '${descProd}', '${precioDis}')`);
-        lastCol.appendChild(button);
+  setTimeout(function () {
+    //console.log("Han pasado 5 segundos");
+    //let lecturaBoton = document.getElementById('btnPrueba');
+    let table = document.querySelector("table tbody");
+    let rows = table.rows;
+    for (let i = 0; i <= rows.length - 1; i++) {
+      let cols = rows[i].cells;
+      var lastCol = rows[i].insertCell(-1);
+      let button = document.createElement('button');
+      let td = document.createElement("td");
+      rows[i].setAttribute('id', rows[i].cells[0].innerText);
+      button.style.width = '60px'; // Establecer el ancho del botón
+      button.style.height = '40px';
+      button.style.backgroundColor = 'rgba(255,255,255,0)';
+      button.style.border = '0px';
+      //imagen lupa
+      let img = document.createElement('img');
+      img.src = '/search-interface-symbol.png';
+      img.alt = 'Buscar';
+      img.style.width = '20px'; // Establecer el ancho de la imagen
+      img.style.height = '20px'; // Establecer la altura de la imagen
+      //icono buscar
+      let span = document.createElement('span');
+      button.appendChild(img);
+      button.appendChild(span);
+      button.setAttribute('id', 'btn' + rows[i].cells[0].innerText);
+      var fila = rows[i].cells[0].innerText;
+      var descProd = rows[i].cells[1].innerText;
+      var precioDis = rows[i].cells[2].innerText;
+      button.setAttribute('onclick', `ejecucionFlujo('${fila}', '${descProd}', '${precioDis}')`);
+      lastCol.appendChild(button);
 
+    }
+
+    var ulLista = document.getElementsByClassName("pagination")[0];
+    ulLista.addEventListener("click", function () {
+      if (event.target.tagName === "A" || event.target.tagName === "LI") {
+        // Aquí puedes poner el código que deseas ejecutar cuando se hace clic en un elemento li
+        crearBoton();
       }
-
-      var ulLista = document.getElementsByClassName("pagination")[0];
-      ulLista.addEventListener("click", function () {
-        if (event.target.tagName === "A" || event.target.tagName === "LI") {
-          // Aquí puedes poner el código que deseas ejecutar cuando se hace clic en un elemento li
-          crearBoton();
-        }
-      });
-    }, 900);
+    });
+  }, 900);
 }
 // Declarar las variables fuera del alcance de la función ejecucionFlujo
 var cantidadUsuario;
