@@ -39,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //******** cuando carga la página ***************************************
 function crearBoton() {
-  document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
       //console.log("Han pasado 5 segundos");
       //let lecturaBoton = document.getElementById('btnPrueba');
@@ -82,7 +81,6 @@ function crearBoton() {
         }
       });
     }, 900);
-  });
 }
 // Declarar las variables fuera del alcance de la función ejecucionFlujo
 var cantidadUsuario;
