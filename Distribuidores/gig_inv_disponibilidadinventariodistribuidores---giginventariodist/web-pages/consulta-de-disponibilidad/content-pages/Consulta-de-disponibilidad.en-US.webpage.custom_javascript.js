@@ -2,9 +2,18 @@ var band = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
-    var elemento = document.querySelector('[aria-label="CodigoProducto"]');
+    var elemento1 = document.querySelector('[aria-label="CodigoProducto"]');
     // Asigna la propiedad aria-label
-    elemento.setAttribute("aria-label", "Codigo");
+    elemento1.textContent = "Codigo";
+
+    var elemento2 = document.querySelector('[aria-label="NombreProducto"]');
+    // Asigna la propiedad aria-label
+    elemento2.textContent = "Nombre";
+
+    var elemento3 = document.querySelector('[aria-label="PrecioDistribuidor"]');
+    // Asigna la propiedad aria-label
+    elemento3.textContent = "Precio";
+
     crearBoton();
     // Aquí coloca el código que deseas ejecutar después de que se haya cargado el DOM
     console.log("El DOM ha cargado por completo");
