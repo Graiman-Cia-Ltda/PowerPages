@@ -20,8 +20,10 @@
 
       band = true;
       //******** cuando da click en el ícono de lupa  *************************
+      console.log("Antes de click");
       var botonFiltro = document.querySelector(".btn-hg");
       botonFiltro.addEventListener("click", function () {
+        console.log("Entró click");
         crearBoton();
       });
   
@@ -37,7 +39,7 @@
       //******** cuando da click en el ícono de lupa  *************************
       //******** cuando carga la página ***************************************
       if (band) {
-        //alert('Bandera: '+band)
+        alert('Bandera: '+band)
         crearBoton();
       }
   
