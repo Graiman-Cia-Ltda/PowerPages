@@ -40,7 +40,7 @@
   function crearBoton() {
     setTimeout(function () {
       //console.log("Han pasado 5 segundos");
-      let lecturaBoton = document.getElementById('btnPrueba');
+      //let lecturaBoton = document.getElementById('btnPrueba');
       let table = document.querySelector("table tbody");
       let rows = table.rows;
       for (let i = 0; i <= rows.length - 1; i++) {
