@@ -10,8 +10,9 @@
       band = true;
       //******** cuando da click en el ícono de lupa  *************************
       console.log("Antes de click");
-      /*var botonFiltro = document.querySelector(".btn-hg");
-      botonFiltro.addEventListener("click", function () {
+      var botonFiltro = document.querySelector(".btn-hg");
+      alert(botonFiltro);
+      /*botonFiltro.addEventListener("click", function () {
         console.log("Entró click");
         crearBoton();
       });*/
