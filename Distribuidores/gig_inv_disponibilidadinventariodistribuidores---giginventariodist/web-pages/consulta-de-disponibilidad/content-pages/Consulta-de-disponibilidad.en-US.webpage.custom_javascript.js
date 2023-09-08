@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //window.addEventListener("load", function () {
 
-  /*band = true;
+  band = true;
   //******** cuando da click en el ícono de lupa  *************************
   console.log("Antes de click");
   var botonFiltro = document.querySelector(".btn-hg");
@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //******** cuando da click en el ícono de lupa  *************************
   //******** cuando carga la página ***************************************
-  /*if (band) {
+  if (band) {
     alert('Bandera: ' + band)
     crearBoton();
-  }*/
+  }
 
   // 5000 milisegundos = 5 segundos
   //});
@@ -80,12 +80,6 @@ function crearBoton() {
           // Aquí puedes poner el código que deseas ejecutar cuando se hace clic en un elemento li
           crearBoton();
         }
-      });
-      var botonFiltro = document.querySelector(".btn-hg");
-      alert(botonFiltro);
-      botonFiltro.addEventListener("click", function () {
-        console.log("Entró click");
-        crearBoton();
       });
     }, 900);
   });
