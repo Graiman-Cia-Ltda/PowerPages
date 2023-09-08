@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
   console.log("Antes de click");
   var botonFiltro = document.querySelector(".btn-hg");
   alert(botonFiltro);
-  /*botonFiltro.addEventListener("click", function () {
+  botonFiltro.addEventListener("click", function () {
     console.log("Entró click");
     crearBoton();
-  });*/
+  });
 
   /*var campoBusqueda = document.getElementsByClassName("query form-control")[0];
   campoBusqueda.addEventListener("keydown", function (event) {
@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //******** cuando da click en el ícono de lupa  *************************
   //******** cuando carga la página ***************************************
-  if (band) {
+  /*if (band) {
     alert('Bandera: ' + band)
     crearBoton();
-  }
+  }*/
 
   // 5000 milisegundos = 5 segundos
   //});
