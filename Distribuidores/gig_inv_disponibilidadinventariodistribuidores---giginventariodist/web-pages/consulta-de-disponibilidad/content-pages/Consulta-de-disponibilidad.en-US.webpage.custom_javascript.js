@@ -1,6 +1,7 @@
 var band = false;
 
 document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
   crearBoton();
   // Aquí coloca el código que deseas ejecutar después de que se haya cargado el DOM
   console.log("El DOM ha cargado por completo");
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 5000 milisegundos = 5 segundos
   //});
+}, 1000);
 });
 
 //******** cuando carga la página ***************************************
