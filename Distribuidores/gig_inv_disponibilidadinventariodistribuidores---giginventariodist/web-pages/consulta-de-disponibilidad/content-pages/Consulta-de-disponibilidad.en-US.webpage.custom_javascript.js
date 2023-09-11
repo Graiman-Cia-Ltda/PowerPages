@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
     var elemento2 = document.querySelector('[aria-label="NombreProducto"]');
     // Asigna la propiedad aria-label
     elemento2.textContent = "Descripción";
-    elemento1.style.fontWeight = "bold"; /* Hace que el texto sea negrita */
-    elemento1.style.fontSize = "24px";
+    elemento2.style.fontWeight = "bold"; /* Hace que el texto sea negrita */
+    elemento2.style.fontSize = "24px";
 
     var elemento3 = document.querySelector('[aria-label="PrecioDistribuidor"]');
     // Asigna la propiedad aria-label
     elemento3.textContent = "Precio";
-    elemento1.style.fontWeight = "bold"; /* Hace que el texto sea negrita */
-    elemento1.style.fontSize = "24px";
+    elemento3.style.fontWeight = "bold"; /* Hace que el texto sea negrita */
+    elemento3.style.fontSize = "24px";
 
     crearBoton();
     // Aquí coloca el código que deseas ejecutar después de que se haya cargado el DOM
