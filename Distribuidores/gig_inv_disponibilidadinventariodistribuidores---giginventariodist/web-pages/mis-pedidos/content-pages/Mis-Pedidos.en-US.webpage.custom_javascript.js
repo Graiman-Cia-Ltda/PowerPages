@@ -15,32 +15,6 @@ function limpiaCache() {
     cargarPedidos();
   });
 
-
-  /*function populateCampo(data, id) {
-    const campo = document.getElementById(id);
-
-    var USDollar = new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-    });
-
-    var credito = parseFloat(data.CupoCredito);
-    campo.value = USDollar.format(credito);
-  }
-
-  function populateCombo(data, id) {
-    const combo = document.getElementById(id);
-
-    data.forEach(item => {
-      const option = document.createElement("option");
-      option.setAttribute("data-value", item.correo);
-      option.textContent = item.nombre;
-
-      combo.appendChild(option)
-    })
-
-  }*/
-
   function populateTable(data) {
     const tableBody = document.querySelector("#responseTable tbody");
     const tableBodyTotal = document.querySelector("#totalTablePedidos tbody");
@@ -81,7 +55,7 @@ function limpiaCache() {
       row.appendChild(estado);
 
       const idPedido = item.id;
-      console.log("Id de pedido: " + idPedido);
+      //console.log("Id de pedido: " + idPedido);
 
       const id = document.createElement("button");
       id.textContent = 'Ver detalle';
@@ -135,31 +109,6 @@ function limpiaCache() {
     const tableBodyTotal = document.querySelector("#totalTableDetallePedidos tbody");
     var cont = 0;
     var suma = 0;
-
-    // Loop through the data and create rows for the table
-    /* data.forEach(item => {
-       const row = document.createElement("tr");
-
-       // Assuming the WS response has 'id' and 'name' properties
-       const codigo = document.createElement("td");
-       codigo.textContent = item.codigo;
-       row.appendChild(codigo);
-
-       const descripcion = document.createElement("td");
-       descripcion.textContent = item.descripcion;
-       row.appendChild(descripcion);
-
-       const cantidadSolicitada = document.createElement("td");
-       cantidadSolicitada.textContent = item.estado;
-       row.appendChild(cantidadSolicitada);
-
-       tableBody.appendChild(row);
-       cont++;
-       suma += item.precioT;
-       console.log(cont);
-       console.log(suma);
-     }
-     );*/
     if (cont === 0) {
       const row = document.createElement("tr");
       console.log('Creo el row');
