@@ -282,8 +282,10 @@ console.log("Campo cliente "+campoCliente);
       })
       .then(function (responseData) {
         console.log(responseData.length);
+        
 
         for (var i = 0; i < responseData.length; i++) {
+            console.log(responseData[i].rucDist);
           obtenerInfoDistribuidores(responseData[i].rucDist);
         }
         //hideSpinner();
