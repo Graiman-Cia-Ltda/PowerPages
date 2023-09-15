@@ -499,7 +499,6 @@ console.log("Campo cliente "+campoCliente);
           showSpinner();
           var ruc = "{{user.giginvci_ruc}}";
           cargarCupoCredito(ruc);
-          
           cargarFactVend(ruc);
 
         }
