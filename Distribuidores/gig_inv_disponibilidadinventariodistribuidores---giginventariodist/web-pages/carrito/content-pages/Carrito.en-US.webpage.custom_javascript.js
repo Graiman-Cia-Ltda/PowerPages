@@ -282,6 +282,7 @@ console.log("Campo cliente "+campoCliente);
       })
       .then(function (responseData) {
         console.log(responseData.length);
+        console.log(responseData)
         
 
         for (var i = 0; i < responseData.length; i++) {
