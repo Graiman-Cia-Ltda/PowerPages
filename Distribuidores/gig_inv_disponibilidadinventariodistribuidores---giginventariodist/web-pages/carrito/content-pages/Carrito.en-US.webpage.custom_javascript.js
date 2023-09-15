@@ -577,7 +577,8 @@ console.log("Campo cliente "+campoCliente);
         let tipoPersona = "{{user.giginvci_tipopersona}}";
         if (tipoPersona === "V" || tipoPersona === "F")
         {
-
+            
+            cargarCupoCredito(ruc);
         }
 
       });
