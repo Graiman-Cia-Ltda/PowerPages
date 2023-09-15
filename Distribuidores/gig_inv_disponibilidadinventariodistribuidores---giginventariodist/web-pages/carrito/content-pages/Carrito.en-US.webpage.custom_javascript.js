@@ -286,7 +286,7 @@ console.log("Campo cliente "+campoCliente);
         
 
         for (var i = 0; i < responseData.length; i++) {
-            console.log(responseData[i].rucDist);
+            console.log(responseData[i].rucDistribuidor);
           obtenerInfoDistribuidores(responseData[i].rucDist);
         }
         //hideSpinner();
