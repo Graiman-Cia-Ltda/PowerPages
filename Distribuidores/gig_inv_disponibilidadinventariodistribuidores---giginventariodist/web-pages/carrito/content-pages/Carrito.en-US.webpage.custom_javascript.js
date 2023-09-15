@@ -445,11 +445,11 @@ console.log("Campo cliente "+campoCliente);
             const campoSemaforo = document.getElementById("semaforo");
             const labelSemaforo = document.querySelector(`label[for="nuevoInput"]`);
   
-            campoCupo.style.display = 'none';
+            /*campoCupo.style.display = 'none';
             labelCupo.style.display = 'none';
   
             campoSemaforo.style.display = 'none';
-            labelSemaforo.style.display = 'none';
+            labelSemaforo.style.display = 'none';*/
   
             obtenerDistribuidoresVend();
             const comboBox = document.getElementById("input1");
