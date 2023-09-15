@@ -229,6 +229,7 @@ console.log("Campo cliente "+campoCliente);
         var descripcionFinal;
         var input = document.getElementById("semaforo");
         populateCampo(responseData, "input3");
+        input.style.width = "10%";
 
         if (typeof responseData.DetalleVencimiento === "undefined") {
           input.style.backgroundColor = "white";
@@ -248,8 +249,8 @@ console.log("Campo cliente "+campoCliente);
           }
           else {
             input.style.backgroundColor = "white";
-            input.style.width = "67%";
-            input.value = "Solicitar mayor información sobre detalle de crédito.";
+            input.style.width = "76%";
+            input.value = "Solicitar mayor información";
           }
         }
         hideSpinner();
