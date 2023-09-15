@@ -355,7 +355,7 @@ console.log("Campo cliente "+campoCliente);
       })
       .then(function (responseData) {
         console.log("infoooo: " + responseData.length);
-
+        console.log("inf: " + responseData)
         console.log("infoooo: " + responseData[0].nombreDist);
 
         const combo = document.getElementById("input1");
