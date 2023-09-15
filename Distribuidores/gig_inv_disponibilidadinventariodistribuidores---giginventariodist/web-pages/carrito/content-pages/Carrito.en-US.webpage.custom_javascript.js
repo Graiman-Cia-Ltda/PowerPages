@@ -198,14 +198,12 @@ console.log("Campo cliente "+campoCliente);
 
         populateCombo(responseData.Facturadores, "dropdown1");
         populateCombo(responseData.Vendedores, "dropdown2");
-        //console.log("Hide 6");
-        //hideSpinner();
       });
   }
 
-  function cargarCupoCredito() {
+  function cargarCupoCredito(ruc) {
     showSpinner();
-    var ruc = "{{user.giginvci_ruc}}";
+    //var ruc = "{{user.giginvci_ruc}}";
     var esquema = '{"ruc": "' + ruc + '"}';
     var url = "https://prod-30.brazilsouth.logic.azure.com:443/workflows/8062c417044b43ca9cd670e1994e4e27/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=aR4_c6LeupACiqHDj-VQPRnSAzasJ3NeyGyOSyy6eAs";
     fetch(url, {
@@ -259,6 +257,40 @@ console.log("Campo cliente "+campoCliente);
 
   }
 
+  function obtenerDistribuidoresVend() {
+    showSpinner();
+    var correoVendedor = "{{user.emailaddress1}}";
+    var esquema = '{"correoVendedor": "' + correoVendedor + '"}';
+    var url = "https://prod-09.brazilsouth.logic.azure.com:443/workflows/468ec6a1c8354a52ae73676580a025de/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=qczLXGkP14qVQ2sub4eQ3OapwenHALoIvp40xKm9CR4";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: esquema,
+    })
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(
+            "Error en la solicitud. Estado: " + response.status
+          );
+          hideSpinner();
+        }
+      })
+      .then(function (responseData) {
+        console.log(responseData.length);
+
+        for (var i = 0; i < responseData.length; i++) {
+          obtenerInfoDistribuidores(responseData[i].rucDist);
+        }
+        //hideSpinner();
+      });
+
+  }
+
   function obtenerDistribuidores() {
     showSpinner();
     var correoPromotor = "{{user.emailaddress1}}";
@@ -292,6 +324,8 @@ console.log("Campo cliente "+campoCliente);
       });
 
   }
+
+  
 
   function obtenerInfoDistribuidores(ruc) {
     showSpinner();
@@ -399,12 +433,42 @@ console.log("Campo cliente "+campoCliente);
               comboBoxVend.selectedIndex = -1;
               comboBoxFact.innerHTML = "";
               comboBoxVend.innerHTML = "";
-
             }
           });
-
-
         }
+        else if (tipoPersona === "V") {
+            const campoCupo = document.getElementById("input3");
+            const labelCupo = document.querySelector(`label[for="input3"]`);
+            const campoSemaforo = document.getElementById("semaforo");
+            const labelSemaforo = document.querySelector(`label[for="nuevoInput"]`);
+  
+            campoCupo.style.display = 'none';
+            labelCupo.style.display = 'none';
+  
+            campoSemaforo.style.display = 'none';
+            labelSemaforo.style.display = 'none';
+  
+            obtenerDistribuidoresVend();
+            const comboBox = document.getElementById("input1");
+            comboBox.addEventListener('change', function () {
+              console.log(comboBox.value);
+              if (comboBox.value !== '') {
+                const elementoSeleccionado = comboBox.options[comboBox.selectedIndex];
+                const valorSeleccionado = elementoSeleccionado.value;
+                obtenerDistXNombre(valorSeleccionado)
+                console.log("Hide 2");
+                hideSpinner();
+              }
+              else {
+                const comboBoxFact = document.getElementById("dropdown1");
+                const comboBoxVend = document.getElementById("dropdown2");
+                comboBoxFact.selectedIndex = -1;
+                comboBoxVend.selectedIndex = -1;
+                comboBoxFact.innerHTML = "";
+                comboBoxVend.innerHTML = "";
+              }
+            });
+          }
         else {
           const campo2 = document.getElementById("input1");
           const label2 = document.querySelector(`label[for="input1"]`);
@@ -433,16 +497,15 @@ console.log("Campo cliente "+campoCliente);
           contenedor.appendChild(label);
           contenedor.appendChild(input);
           showSpinner();
-          cargarCupoCredito();
           var ruc = "{{user.giginvci_ruc}}";
+          cargarCupoCredito(ruc);
+          
           cargarFactVend(ruc);
-          //console.log("Hide 3");
-          //hideSpinner();
+
         }
 
         populateTable(responseData);
-        //console.log("Hide 4");
-        //hideSpinner();
+
       });
   }
 
@@ -512,16 +575,12 @@ console.log("Campo cliente "+campoCliente);
       .then(function (responseData) {
         var ruc = responseData[0].ruc;
         cargarFactVend(ruc);
+        let tipoPersona = "{{user.giginvci_tipopersona}}";
+        if (tipoPersona === "V" || tipoPersona === "F")
+        {
 
+        }
 
-        /* 
-        data = responseData; // Asignar el valor a la variable data
-
-        alert('Su pedido fue enviado con éxito.');
-        setTimeout(function () {
-          window.location.reload();
-          window.location.href = '/';
-        }, 1000);*/
       });
   }
 
