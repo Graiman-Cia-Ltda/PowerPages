@@ -234,7 +234,7 @@ console.log("Campo cliente "+campoCliente);
 
         if (typeof responseData.DetalleVencimiento === "undefined") {
           input.style.backgroundColor = "white";
-          input.style.width = "80%";
+          input.style.width = "100%";
           input.value = "Solicitar mayor información.";
         } else {
           for (var i = 0; i < responseData.DetalleVencimiento.length; i++) {
@@ -250,7 +250,7 @@ console.log("Campo cliente "+campoCliente);
           }
           else {
             input.style.backgroundColor = "white";
-            input.style.width = "80%";
+            input.style.width = "100%";
             input.value = "Solicitar mayor información";
           }
         }
@@ -264,6 +264,42 @@ console.log("Campo cliente "+campoCliente);
     var correoVendedor = "{{user.emailaddress1}}";
     var esquema = '{"correoVendedor": "' + correoVendedor + '"}';
     var url = "https://prod-09.brazilsouth.logic.azure.com:443/workflows/468ec6a1c8354a52ae73676580a025de/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=qczLXGkP14qVQ2sub4eQ3OapwenHALoIvp40xKm9CR4";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: esquema,
+    })
+      .then(function (response) {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(
+            "Error en la solicitud. Estado: " + response.status
+          );
+          hideSpinner();
+        }
+      })
+      .then(function (responseData) {
+        console.log(responseData.length);
+        console.log(responseData)
+        
+
+        for (var i = 0; i < responseData.length; i++) {
+            console.log(responseData[i].rucDistribuidor);
+          obtenerInfoDistribuidores(responseData[i].rucDistribuidor);
+        }
+        //hideSpinner();
+      });
+
+  }
+  function obtenerDistribuidoresFact() {
+    showSpinner();
+    var correoFacturador = "{{user.emailaddress1}}";
+    var esquema = '{"correoFacturador": "' + correoFacturador + '"}';
+    var url = "https://prod-25.brazilsouth.logic.azure.com:443/workflows/bc52f6e6158142c2bd373876bad4709b/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4L1U9H9rRRvUGFWyaVoUXs9F6IxmPzqiPxDEpW28L7o";
     fetch(url, {
       method: "POST",
       headers: {
@@ -454,6 +490,39 @@ console.log("Campo cliente "+campoCliente);
             labelSemaforo.style.display = 'none';*/
   
             obtenerDistribuidoresVend();
+            const comboBox = document.getElementById("input1");
+            comboBox.addEventListener('change', function () {
+              console.log(comboBox.value);
+              if (comboBox.value !== '') {
+                const elementoSeleccionado = comboBox.options[comboBox.selectedIndex];
+                const valorSeleccionado = elementoSeleccionado.value;
+                obtenerDistXNombre(valorSeleccionado)
+                console.log("Hide 2");
+                hideSpinner();
+              }
+              else {
+                const comboBoxFact = document.getElementById("dropdown1");
+                const comboBoxVend = document.getElementById("dropdown2");
+                comboBoxFact.selectedIndex = -1;
+                comboBoxVend.selectedIndex = -1;
+                comboBoxFact.innerHTML = "";
+                comboBoxVend.innerHTML = "";
+              }
+            });
+          }
+          else if (tipoPersona === "F") {
+            const campoCupo = document.getElementById("input3");
+            const labelCupo = document.querySelector(`label[for="input3"]`);
+            const campoSemaforo = document.getElementById("semaforo");
+            const labelSemaforo = document.querySelector(`label[for="nuevoInput"]`);
+  
+            /*campoCupo.style.display = 'none';
+            labelCupo.style.display = 'none';
+  
+            campoSemaforo.style.display = 'none';
+            labelSemaforo.style.display = 'none';*/
+  
+            obtenerDistribuidoresFact();
             const comboBox = document.getElementById("input1");
             comboBox.addEventListener('change', function () {
               console.log(comboBox.value);
