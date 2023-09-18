@@ -230,10 +230,11 @@ console.log("Campo cliente "+campoCliente);
         var input = document.getElementById("semaforo");
         populateCampo(responseData, "input3");
         input.style.width = "10%";
+        input.value="";
 
         if (typeof responseData.DetalleVencimiento === "undefined") {
           input.style.backgroundColor = "white";
-          input.style.width = "76%";
+          input.style.width = "80%";
           input.value = "Solicitar mayor información.";
         } else {
           for (var i = 0; i < responseData.DetalleVencimiento.length; i++) {
@@ -249,7 +250,7 @@ console.log("Campo cliente "+campoCliente);
           }
           else {
             input.style.backgroundColor = "white";
-            input.style.width = "76%";
+            input.style.width = "80%";
             input.value = "Solicitar mayor información";
           }
         }
