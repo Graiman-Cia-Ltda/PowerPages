@@ -235,6 +235,7 @@ console.log("Campo cliente "+campoCliente);
         if (typeof responseData.DetalleVencimiento === "undefined") {
           input.style.backgroundColor = "white";
           input.style.width = "100%";
+          input.style.fontSize="18";
           input.value = "Solicitar mayor información.";
         } else {
           for (var i = 0; i < responseData.DetalleVencimiento.length; i++) {
@@ -251,6 +252,7 @@ console.log("Campo cliente "+campoCliente);
           else {
             input.style.backgroundColor = "white";
             input.style.width = "100%";
+            input.style.fontSize="18";
             input.value = "Solicitar mayor información";
           }
         }
