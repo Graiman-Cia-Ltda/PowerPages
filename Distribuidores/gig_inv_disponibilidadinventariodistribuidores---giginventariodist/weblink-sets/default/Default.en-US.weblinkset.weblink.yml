@@ -24,7 +24,7 @@
   adx_weblinksetid: 10755cb3-c615-ee11-9cbe-000d3a892db5
 - adx_disablepagevalidation: false
   adx_displayimageonly: false
-  adx_displayorder: 5
+  adx_displayorder: 8
   adx_displaypagechildlinks: false
   adx_name: Contacto
   adx_openinnewwindow: false
@@ -86,7 +86,7 @@
   adx_displayimageonly: false
   adx_displayorder: 7
   adx_displaypagechildlinks: false
-  adx_name: Mis Pedidos
+  adx_name: Mis pedidos
   adx_openinnewwindow: false
   adx_pageid: 20cf45d7-1bfe-f466-add0-9c7b8464c470
   adx_publishingstateid: 251045b2-c615-ee11-9cbe-002248de6701
