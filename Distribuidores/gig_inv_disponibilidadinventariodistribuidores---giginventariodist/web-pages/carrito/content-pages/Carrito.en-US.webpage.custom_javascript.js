@@ -663,7 +663,7 @@ function crearLeadCRM() {
       }
     })
     .then(function (responseData) {
-
+console.log("Entró al servicio de CRM");
 
     });
 }
