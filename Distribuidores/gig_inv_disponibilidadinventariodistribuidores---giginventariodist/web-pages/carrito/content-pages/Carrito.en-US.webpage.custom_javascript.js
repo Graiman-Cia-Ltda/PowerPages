@@ -9,7 +9,7 @@ function limpiaCache() {
     location.hash = "#reloaded";
   }
 }
-
+var facturador;
 // Evento que verifica si ya cargó toda la página
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let selectedOption1;
   let vendedor;
   let selectedOption2;
-  let facturador;
+ 
 
   dropdown1.addEventListener("change", function () {
     selectedOption1 = dropdown1.options[dropdown1.selectedIndex];
@@ -501,7 +501,7 @@ function cargarCarrito() {
             obtenerDistXNombre(valorSeleccionado)
 
             console.log("Este es el total del carrito.****" + suma + "****");
-            console.log("Este es el timestamp.****" + Date.now() + "****");
+            console.log("Este es el timestamp.****" + new Date().toJSON() + "****");
             console.log("Este es el facturador****" + facturador + "****");
             console.log("Este es el RUC****" + identificacionFiscal + "****");
             hideSpinner();
