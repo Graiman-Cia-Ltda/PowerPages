@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let selectedOption1;
   let vendedor;
   let selectedOption2;
- 
+
 
   dropdown1.addEventListener("change", function () {
     selectedOption1 = dropdown1.options[dropdown1.selectedIndex];
@@ -29,11 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
   dropdown2.addEventListener("change", function () {
     selectedOption2 = dropdown2.options[dropdown2.selectedIndex];
     facturador = selectedOption2.getAttribute("data-value");
-    console.log("Este es el total del carrito.****" + suma + "****");
-    console.log("Este es el timestamp.****" + new Date().toJSON() + "****");
-    console.log("Este es el facturador****" + facturador + "****");
-    console.log("Este es el RUC****" + identificacionFiscal + "****");
-    //console.log(facturador);
+    console.log(facturador);
+    console.log("Este es el COMENTARIO****" + comentarios + "****");
   });
 
   var botonConfirmar = document.getElementById('botonConfirmar');
@@ -111,6 +108,7 @@ function populateCombo(data, id) {
 
 
 var suma = 0;
+var comentarios = "";
 function populateTable(data) {
   const tableBody = document.querySelector("#responseTable tbody");
   const tableBodyTotal = document.querySelector("#totalTable tbody");
@@ -124,18 +122,22 @@ function populateTable(data) {
     // Assuming the WS response has 'id' and 'name' properties
     const codigoCell = document.createElement("td");
     codigoCell.textContent = item.codigo;
+    comentarios += item.codigo + "  ";
     row.appendChild(codigoCell);
 
     const descripcionCell = document.createElement("td");
     descripcionCell.textContent = item.producto;
+    comentarios += item.producto + "  ";
     row.appendChild(descripcionCell);
 
     const cantidadCell = document.createElement("td");
     cantidadCell.textContent = item.cantidad;
+    comentarios += item.cantidad + "  ";
     row.appendChild(cantidadCell);
 
     const precioUCell = document.createElement("td");
     precioUCell.textContent = item.precioU.toLocaleString("en-US", { style: "currency", currency: "USD" });
+    comentarios += item.precioU.toLocaleString("en-US", { style: "currency", currency: "USD" }) + "  \n";
     row.appendChild(precioUCell);
 
     const precioTCell = document.createElement("td");
@@ -626,12 +628,18 @@ function confirmarCarrito(campoCliente, campoNotas, vendedor, facturador) {
       }, 1000);
     });
 }
-
+//var datetimeNombre=new Date().toJSON();
 function crearLeadCRM() {
   showSpinner();
   //var correoDist = "{{user.emailaddress1}}";
+  console.log("Este es el total del carrito.****" + suma + "****");
+  console.log("Este es el timestamp.****" + new Date().toJSON() + "****");
+  console.log("Este es el facturador****" + facturador + "****");
+  console.log("Este es el RUC****" + identificacionFiscal + "****");
+  console.log("Este es el COMENTARIO****" + comentarios + "****");
+
   var esquema =
-    '{"nombreDist": "' + nombre + '"} -- { "Origen": "Portal Distribuidores", "MontoLeads": "110.56", "NombreLeads": "REMODELACION COCINA W", "Creador": "SOFIA MELISSA VASQUEZ CAMPOVERDE", "Identificador": "1", "IdentificacionFiscal" : "0190088669001", "Comentarios" : "X" }';
+    '{"nombreDist": "' + nombre + '"} -- { "Origen": "Portal Distribuidores", "MontoLeads": "' + suma + '", "NombreLeads": "' + new Date().toJSON() + '", "Creador": "' + facturador + '", "Identificador": "1", "IdentificacionFiscal" : "' + identificacionFiscal + '", "Comentarios" : "X" }';
   var url =
     "https://prod-120.westus.logic.azure.com:443/workflows/6fcb5ef5e7924830b2a97b86ee4517dd/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2upDF2ri7wCDAT67Gn_KklpdPzjxFYz1AHl_ujEsKRs";
 
