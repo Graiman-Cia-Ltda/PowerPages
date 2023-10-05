@@ -122,26 +122,27 @@ function populateTable(data) {
     // Assuming the WS response has 'id' and 'name' properties
     const codigoCell = document.createElement("td");
     codigoCell.textContent = item.codigo;
-    comentarios += item.codigo + "  ";
+    comentarios += "Codigo: "+item.codigo + "  ";
     row.appendChild(codigoCell);
 
     const descripcionCell = document.createElement("td");
     descripcionCell.textContent = item.producto;
-    comentarios += item.producto + "  ";
+    comentarios += "Descripción: "+item.producto + "  ";
     row.appendChild(descripcionCell);
 
     const cantidadCell = document.createElement("td");
     cantidadCell.textContent = item.cantidad;
-    comentarios += item.cantidad + "  ";
+    comentarios += "Cantidad: "+item.cantidad + "  ";
     row.appendChild(cantidadCell);
 
     const precioUCell = document.createElement("td");
     precioUCell.textContent = item.precioU.toLocaleString("en-US", { style: "currency", currency: "USD" });
-    comentarios += item.precioU.toLocaleString("en-US", { style: "currency", currency: "USD" }) + "  \n";
+    comentarios += "Precio Unitario: "+item.precioU.toLocaleString("en-US", { style: "currency", currency: "USD" }) + "  ";
     row.appendChild(precioUCell);
 
     const precioTCell = document.createElement("td");
     precioTCell.textContent = item.precioT.toLocaleString("en-US", { style: "currency", currency: "USD" });
+    comentarios += "Precio Total: "+item.precioT.toLocaleString("en-US", { style: "currency", currency: "USD" }) + "  \n";
     row.appendChild(precioTCell);
 
     // Add other cells for additional data if needed
