@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     selectedOption2 = dropdown2.options[dropdown2.selectedIndex];
     facturador = selectedOption2.getAttribute("data-value");
     console.log(facturador);
-    console.log("Este es el COMENTARIO****" + comentarios + "****");
+    //console.log("Este es el COMENTARIO****" + comentarios + "****");
   });
 
   var botonConfirmar = document.getElementById('botonConfirmar');
@@ -621,7 +621,7 @@ function confirmarCarrito(campoCliente, campoNotas, vendedor, facturador) {
     .then(function (responseData) {
       data = responseData; // Asignar el valor a la variable data
 
-      //crearLeadCRM();
+      crearLeadCRM();
       alert('Su pedido fue enviado con éxito.');
       setTimeout(function () {
         window.location.reload();
@@ -640,7 +640,7 @@ function crearLeadCRM() {
   console.log("Este es el COMENTARIO****" + comentarios + "****");
 
   var esquema =
-    '{"nombreDist": "' + nombre + '"} -- { "Origen": "Portal Distribuidores", "MontoLeads": "' + suma + '", "NombreLeads": "' + new Date().toJSON() + '", "Creador": "' + facturador + '", "Identificador": "1", "IdentificacionFiscal" : "' + identificacionFiscal + '", "Comentarios" : "X" }';
+    '{ "Origen": "Portal Distribuidores", "MontoLeads": "' + suma + '", "NombreLeads": "' + new Date().toJSON() + '", "Creador": "' + facturador + '", "Identificador": "1", "IdentificacionFiscal" : "' + identificacionFiscal + '", "Comentarios" : "'+comentarios+'" }';
   var url =
     "https://prod-120.westus.logic.azure.com:443/workflows/6fcb5ef5e7924830b2a97b86ee4517dd/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2upDF2ri7wCDAT67Gn_KklpdPzjxFYz1AHl_ujEsKRs";
 
