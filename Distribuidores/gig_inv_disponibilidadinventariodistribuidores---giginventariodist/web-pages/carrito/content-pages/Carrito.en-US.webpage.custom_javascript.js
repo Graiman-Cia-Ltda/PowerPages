@@ -29,7 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
   dropdown2.addEventListener("change", function () {
     selectedOption2 = dropdown2.options[dropdown2.selectedIndex];
     facturador = selectedOption2.getAttribute("data-value");
-    console.log(facturador);
+    console.log("Este es el total del carrito.****" + suma + "****");
+    console.log("Este es el timestamp.****" + new Date().toJSON() + "****");
+    console.log("Este es el facturador****" + facturador + "****");
+    console.log("Este es el RUC****" + identificacionFiscal + "****");
+    //console.log(facturador);
   });
 
   var botonConfirmar = document.getElementById('botonConfirmar');
@@ -500,10 +504,7 @@ function cargarCarrito() {
             const valorSeleccionado = elementoSeleccionado.value;
             obtenerDistXNombre(valorSeleccionado)
 
-            console.log("Este es el total del carrito.****" + suma + "****");
-            console.log("Este es el timestamp.****" + new Date().toJSON() + "****");
-            console.log("Este es el facturador****" + facturador + "****");
-            console.log("Este es el RUC****" + identificacionFiscal + "****");
+
             hideSpinner();
           }
           else {
