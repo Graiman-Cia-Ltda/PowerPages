@@ -204,8 +204,8 @@ function cargarFactVend(ruc) {
     .then(function (responseData) {
       // Asignar el valor a la variable data
 
-      populateCombo(responseData.Facturadores, "dropdown1");
-      populateCombo(responseData.Vendedores, "dropdown2");
+      populateCombo(responseData.Facturadores, "dropdown2");
+      populateCombo(responseData.Vendedores, "dropdown1");
     });
 }
 
