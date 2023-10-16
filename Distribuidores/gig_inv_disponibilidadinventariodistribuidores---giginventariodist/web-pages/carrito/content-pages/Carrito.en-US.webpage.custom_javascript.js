@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
     selectedOption2 = dropdown2.options[dropdown2.selectedIndex];
     facturador = selectedOption2.getAttribute("data-value");
     console.log(facturador);
-    nombreFacturador=selectedOption2.value
-    //console.log("Este es el COMENTARIO****" + comentarios + "****");
+    nombreFacturador=selectedOption2.value;
+    console.log("Este es el NOMBREFACTURADOR****" + nombreFacturador + "****");
   });
 
   var botonConfirmar = document.getElementById('botonConfirmar');
