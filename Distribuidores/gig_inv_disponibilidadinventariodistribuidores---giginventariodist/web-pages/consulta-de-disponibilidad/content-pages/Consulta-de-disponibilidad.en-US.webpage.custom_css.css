@@ -75,6 +75,11 @@
 
  /* Estilo para la imagen */
  .imagenItem {
+
+  width: 100%; /* asegura que la imagen llene el contenedor */
+  height: auto; /* mantiene la relación de aspecto de la imagen */
+
+  
    /* Tamaño máximo y mínimo */
    position: absolute;
    top: 50%;
