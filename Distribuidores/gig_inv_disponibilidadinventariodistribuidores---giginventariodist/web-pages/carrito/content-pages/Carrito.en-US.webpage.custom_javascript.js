@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     selectedOption2 = dropdown2.options[dropdown2.selectedIndex];
     facturador = selectedOption2.getAttribute("data-value");
     console.log(facturador);
-    nombreFacturador = selectedOption2.value;
+    nombreFacturador=selectedOption2.value;
     console.log("Este es el NOMBREFACTURADOR****" + nombreFacturador + "****");
   });
 
@@ -123,27 +123,27 @@ function populateTable(data) {
     // Assuming the WS response has 'id' and 'name' properties
     const codigoCell = document.createElement("td");
     codigoCell.textContent = item.codigo;
-    comentarios += "Codigo: " + item.codigo + "  ";
+    comentarios += "Codigo: "+item.codigo + "  ";
     row.appendChild(codigoCell);
 
     const descripcionCell = document.createElement("td");
     descripcionCell.textContent = item.producto;
-    comentarios += "Descripción: " + item.producto + "  ";
+    comentarios += "Descripción: "+item.producto + "  ";
     row.appendChild(descripcionCell);
 
     const cantidadCell = document.createElement("td");
     cantidadCell.textContent = item.cantidad;
-    comentarios += "Cantidad: " + item.cantidad + "  ";
+    comentarios += "Cantidad: "+item.cantidad + "  ";
     row.appendChild(cantidadCell);
 
     const precioUCell = document.createElement("td");
     precioUCell.textContent = item.precioU.toLocaleString("en-US", { style: "currency", currency: "USD" });
-    comentarios += "Precio Unitario: " + item.precioU.toLocaleString("en-US", { style: "currency", currency: "USD" }) + "  ";
+    comentarios += "Precio Unitario: "+item.precioU.toLocaleString("en-US", { style: "currency", currency: "USD" }) + "  ";
     row.appendChild(precioUCell);
 
     const precioTCell = document.createElement("td");
     precioTCell.textContent = item.precioT.toLocaleString("en-US", { style: "currency", currency: "USD" });
-    comentarios += "Precio Total: " + item.precioT.toLocaleString("en-US", { style: "currency", currency: "USD" }) + "  \n";
+    comentarios += "Precio Total: "+item.precioT.toLocaleString("en-US", { style: "currency", currency: "USD" }) + "  \n";
     row.appendChild(precioTCell);
 
     // Add other cells for additional data if needed
@@ -631,32 +631,22 @@ function confirmarCarrito(campoCliente, campoNotas, vendedor, facturador) {
     });
 }
 //var datetimeNombre=new Date().toJSON();
-var nombreFacturador = "";
+var nombreFacturador="";
 function crearLeadCRM() {
   showSpinner();
-
-  const fechaActual = new Date();
-
-  // Resta 5 horas
-  fechaActual.setHours(fechaActual.getHours() - 5);
-
-  // Convierte la fecha a formato JSON
-  const fechaConResta = fechaActual.toJSON();
-
-  console.log(fechaConResta);
   //var correoDist = "{{user.emailaddress1}}";
   console.log("Este es el total del carrito.****" + suma + "****");
-  console.log("Este es el timestamp.****" + fechaConResta + "****");
+  console.log("Este es el timestamp.****" + new Date().toJSON() + "****");
   console.log("Este es el facturador****" + nombreFacturador + "****");
   console.log("Este es el RUC****" + identificacionFiscal + "****");
   console.log("Este es el COMENTARIO****" + comentarios + "****");
 
   /*var esquema =
     '{ "Origen": "Portal Distribuidores", "MontoLeads": "' + suma + '", "NombreLeads": "' + new Date().toJSON() + '", "Creador": "cfreire@graiman.com", "Identificador": "1", "IdentificacionFiscal" : "' + identificacionFiscal + '", "Comentarios" : "'+comentarios+'"}';*/
-
+  
   var esquema =
-    '{ "Origen": "PORTAL_DISTRIBUIDORES", "MontoLeads": "' + suma + '", "NombreLeads": "' + fechaConResta + '", "Creador": "' + nombreFacturador + '", "Identificador": "1", "IdentificacionFiscal" : "' + identificacionFiscal + '", "Comentarios" : "' + comentarios + '"}';
-  var url =
+    '{ "Origen": "PORTAL_DISTRIBUIDORES", "MontoLeads": "' + suma + '", "NombreLeads": "' + new Date().toJSON() + '", "Creador": "' + nombreFacturador + '", "Identificador": "1", "IdentificacionFiscal" : "' + identificacionFiscal + '", "Comentarios" : "'+comentarios+'"}';
+    var url =
     "https://prod-120.westus.logic.azure.com:443/workflows/6fcb5ef5e7924830b2a97b86ee4517dd/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=2upDF2ri7wCDAT67Gn_KklpdPzjxFYz1AHl_ujEsKRs";
 
   fetch(url, {
@@ -678,7 +668,7 @@ function crearLeadCRM() {
       }
     })
     .then(function (responseData) {
-      console.log("Entró al servicio de CRM");
+console.log("Entró al servicio de CRM");
 
     });
 }

@@ -837,9 +837,17 @@ adx_tag:
   CheckSum: 14c999b458bd29d866429ce7a7eefd4ecdaba724b7b22e868fb22b62eb36e011
   IsDeleted: false
 adx_urlhistory:
+- RecordId: 041c433e-f36b-1410-8e85-00516a49a359
+  DisplayName: ~/Carrito
+  CheckSum: 3c1c7e719e49003f2bfd8319d6c2da0e18fd4183029fa1289f8c75a8e499826f
+  IsDeleted: false
 - RecordId: 06e9423e-f36b-1410-8f7d-002bcdf5a0d7
   DisplayName: ~/Mis-Pedidos
   CheckSum: 532fe94bf2531ec2e2e19ea3c96d4e6b6ff8c846d612fb92d2de98b165f409e1
+  IsDeleted: false
+- RecordId: 081c433e-f36b-1410-8e85-00516a49a359
+  DisplayName: ~/Carrito
+  CheckSum: 7b30da8d6af1be12338450ea99b48d45741f0c5ad54cc72dfb4b3f64fb066d62
   IsDeleted: false
 - RecordId: 09e9423e-f36b-1410-8f7d-002bcdf5a0d7
   DisplayName: ~/Carrito
@@ -853,6 +861,10 @@ adx_urlhistory:
   DisplayName: ~/Mis-Pedidos
   CheckSum: 3f0202d656eb8a38c34759bb5acc6e30ad67c38cdda568f2ac72c0f9a0a51bfc
   IsDeleted: false
+- RecordId: 0edb423e-f36b-1410-8c58-00d63b9eceb0
+  DisplayName: ~/Carrito
+  CheckSum: b98dd5a6dcf8799f30596293e8d9047f32f89985b9d575f1cd437eb99840479c
+  IsDeleted: false
 - RecordId: 0ee9423e-f36b-1410-8f7d-002bcdf5a0d7
   DisplayName: ~/Mis-Pedidos
   CheckSum: 29149c1b3de25314fd236e3c02da043c7b132310979052758ee6d2d4295b810d
@@ -864,6 +876,10 @@ adx_urlhistory:
 - RecordId: 1079433e-f36b-1410-887f-00c729f90112
   DisplayName: ~/Carrito
   CheckSum: ce36374b6be0623397a5eac7ce136f810ad4313c44661795308f247242630db2
+  IsDeleted: false
+- RecordId: 10af433e-f36b-1410-8ba5-00b91aee37e4
+  DisplayName: ~/Carrito
+  CheckSum: 668a656895c3e32683ffcc4afefeabd7e1bf9d54075f268aadef9a1920c20df9
   IsDeleted: false
 - RecordId: 10f1423e-f36b-1410-804a-00a90b0b232d
   DisplayName: ~/ConsultaDisponibilidad
@@ -885,6 +901,10 @@ adx_urlhistory:
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: 9f12b7cd7f594bda92947e11fb1ec520dba8d6afd4fbdf1e4ad56a47127026a8
   IsDeleted: false
+- RecordId: 152c433e-f36b-1410-8941-0014724063ec
+  DisplayName: ~/Carrito
+  CheckSum: 7ac60f6a50551490b5754961eebf921fb28d8a4064f18f757fbf33d17b22b4b1
+  IsDeleted: false
 - RecordId: 16e9423e-f36b-1410-8f7d-002bcdf5a0d7
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: bc7cd3b89d5da05efbdc1a6d1c15d298b1ea6c2dba85b75b2abc191692989f06
@@ -900,6 +920,14 @@ adx_urlhistory:
 - RecordId: 1779433e-f36b-1410-887f-00c729f90112
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: c68740f9a19c3327ce4a1b7749f18c69e1c8d310e5816daaa8705810207edc06
+  IsDeleted: false
+- RecordId: 18d1423e-f36b-1410-8a63-005f940b138b
+  DisplayName: ~/Carrito
+  CheckSum: 286cefd59196021fa531b740d4032f5917819b1db8283f14c0d945a0e765277e
+  IsDeleted: false
+- RecordId: 192c433e-f36b-1410-8941-0014724063ec
+  DisplayName: ~/Carrito
+  CheckSum: 3463556e85944b8e78f1f60cd76ba316aa188dfa6b46ab5bc7a7c0ef32b4806a
   IsDeleted: false
 - RecordId: 19a1433e-f36b-1410-84ca-00037c9afc7e
   DisplayName: ~/ConsultaDisponibilidad
@@ -924,6 +952,14 @@ adx_urlhistory:
 - RecordId: 1cf1423e-f36b-1410-804a-00a90b0b232d
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: 5ffcf900b676ad944e1c45a2b4c49410fad91e0fcfdfef0c1a80f1bad1ef2e31
+  IsDeleted: false
+- RecordId: 1e3a433e-f36b-1410-84ed-00339d98701e
+  DisplayName: ~/Carrito
+  CheckSum: 7583abd996bcda6e0c56cb62379e21f2481fb2d63272fa143847cd73432e4f97
+  IsDeleted: false
+- RecordId: 1ef5423e-f36b-1410-8e54-00153690ab7a
+  DisplayName: ~/Carrito
+  CheckSum: 820073ffa069f1dae74615bc748f4fe4f050a86ebe48213263f3ac829138f2e4
   IsDeleted: false
 - RecordId: 1fa1433e-f36b-1410-84ca-00037c9afc7e
   DisplayName: ~/Carrito
@@ -1073,6 +1109,10 @@ adx_urlhistory:
   DisplayName: ~/Mis-Pedidos
   CheckSum: 6880cc6a861af121da7adb7202de78db2ba47c36a726f2e0d0e7acf4f6d1ade5
   IsDeleted: false
+- RecordId: 7589433e-f36b-1410-8b8c-00dd7e5a9fbf
+  DisplayName: ~/Carrito
+  CheckSum: 43c337f94f9824e42575a4ab102b6725bd4324f5ee8d55f52aa9fa9ad4983e39
+  IsDeleted: false
 - RecordId: 77e8423e-f36b-1410-83c9-0022164a47f4
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: b843969447ca2fe7a025c547eab8d9535f28093dda2e99d8bd9162b5a515eafa
@@ -1088,6 +1128,10 @@ adx_urlhistory:
 - RecordId: 7c51433e-f36b-1410-8fff-00345d5e333d
   DisplayName: ~/Mis-Pedidos
   CheckSum: 46e0376d13cf85ac88eafcef7dfce74196b183b104f2f0076d589b8f0acb21be
+  IsDeleted: false
+- RecordId: 7da2433e-f36b-1410-86e2-00bf2a80b9a8
+  DisplayName: ~/Carrito
+  CheckSum: b0f1499c34943933f8b9aab277b7d6b9519727768bf77ac251384bf11b5805ab
   IsDeleted: false
 - RecordId: 7de8423e-f36b-1410-83c9-0022164a47f4
   DisplayName: ~/ConsultaDisponibilidad
@@ -1229,6 +1273,10 @@ adx_urlhistory:
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: 4d56ac70dbb7d6c9958f779e2da71bf3cddff999b5a6c26972e96c4fe30ed8e3
   IsDeleted: false
+- RecordId: aad7423e-f36b-1410-8fa7-00b4546eb47d
+  DisplayName: ~/Carrito
+  CheckSum: f4596551198271a8d7815483282ba125ebcf3163eb99bb009e77537373839d39
+  IsDeleted: false
 - RecordId: ac03433e-f36b-1410-82b8-00679f1f6cac
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: 634777fab3f294756136ebdd5713b4d2d3bca8b213b2525d14fa2403a93b2206
@@ -1349,6 +1397,10 @@ adx_urlhistory:
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: 9d17b778e5f84c44e10249935ab27fd03941a16d3ea994fd079a6900108fab95
   IsDeleted: false
+- RecordId: e37a433e-f36b-1410-8a1c-00517d35339d
+  DisplayName: ~/Carrito
+  CheckSum: 4aa94f9ef156460898e2cc1abdd91dc7cf8a4337eb8fa17bad656e3d5dfda3df
+  IsDeleted: false
 - RecordId: e9e8423e-f36b-1410-801d-008b6a05faf6
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: ae2c7f97934316b6c54f1dcf571d2f985443f4b099648a594587449a6df43264
@@ -1448,7 +1500,7 @@ adx_webfile:
   IsDeleted: false
 - RecordId: 88441ea3-0e67-44ef-b5d2-79b8d6b4b7ae
   DisplayName: thumbnail.css
-  CheckSum: 35d90bb0f2aa5d9363ff2383bc6f1e516e30fe7258a5382e3b2b18f8191304e0
+  CheckSum: 0a5a000c10578858fd502bf919035a1ffba002a10a30aeb47cb807c99b007fd8
   IsDeleted: false
 - RecordId: 8b33f8d8-6ebf-419f-aea0-5fe94933b67d
   DisplayName: tw-black.png
@@ -1607,7 +1659,7 @@ adx_webpage:
   IsDeleted: false
 - RecordId: 15755cb3-c615-ee11-9cbe-000d3a892db5
   DisplayName: Inicio
-  CheckSum: 59c8cd00415787932bb7f2a9316563e3e475ed97965c19ee94bb3945d6fbf8cb
+  CheckSum: e4a57b7346be632a9ef489c93aeef11bad84ca75b9b5d421de52c039050bd0dc
   IsDeleted: false
 - RecordId: 16755cb3-c615-ee11-9cbe-000d3a892db5
   DisplayName: Page Not Found
@@ -1623,7 +1675,7 @@ adx_webpage:
   IsDeleted: false
 - RecordId: 2933d312-7341-206c-bfab-80151f3333bc
   DisplayName: Carrito
-  CheckSum: fb7f4e54c2e6f1efcc464e643a359926991e9195ff032aabd045f9e12800a267
+  CheckSum: 615094cea2361cc30e2071cbfa5df69693a3e1fc30ec10822a22bc1c1b9662f2
   IsDeleted: false
 - RecordId: 3a9149b5-51ca-efc5-6257-df9a0d045d58
   DisplayName: Mis Pedidos
@@ -2045,7 +2097,7 @@ annotation:
   IsDeleted: false
 - RecordId: d69e0ba5-7c98-46f4-a859-076d6a03fefd
   DisplayName: thumbnail.css
-  CheckSum: d0b4a80ef890c88fb52e07a4f0bb04605c13251b0e81bf136a1233172acce2b7
+  CheckSum: d07ba8a9696b80ef21f8cc052cd0907a2500e18429c1e1f97107b1be7212474b
   IsDeleted: false
 - RecordId: f64d42b8-c615-ee11-9cbe-002248de6701
   DisplayName: Homehero.png
