@@ -56,25 +56,11 @@
    }
  }
 
+#contenedor{
+  display: flex;
+}
  .image-container {
-   padding-left: 50px;
-   padding-right: 25px;
-   width: 100px;
-   /* o cualquier tamaño que desees */
-   height: 100px;
-   /* debe ser igual al ancho para un círculo perfecto */
-
-   /* Alineación de la imagen (opcional) */
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   /* Crear un círculo */
-   border-radius: 50%;
-   /* esto hace que sea circular */
-
-   /* Estilos adicionales (opcional) */
-   overflow: hidden;
-   /* esto asegura que nada se salga del círculo */
+flex: 1;
  }
 
  /* Estilo para la imagen */

@@ -273,7 +273,7 @@ function formatData(data, precioDis, codigoProducto) {
   var etiquetaSaldo = "";
 
   // Ejemplo: convertir los datos en una lista con viñetas
-  formattedData += '<div class="image-container"><img src="https://www.graiman.com/sites/default/files/styles/156x156/public/productos-texturas/' + codigoProducto.slice(0, -1) + 'E.png" alt="Sin imagen" id="imagenItem" class="imagenItem"></div>';
+  formattedData += '<div id="contenedor"><div class="image-container"><img src="https://www.graiman.com/sites/default/files/styles/156x156/public/productos-texturas/' + codigoProducto.slice(0, -1) + 'E.png" alt="Sin imagen" id="imagenItem" class="imagenItem"></div></div>';
   var i = 1;
   for (var key in data) {
     if (key != "saldo") {
