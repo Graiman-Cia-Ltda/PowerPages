@@ -56,20 +56,24 @@
    }
  }
 
-#contenedor{
-  display: flex;
-}
+ #contenedor {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
  .image-container {
-flex: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
  }
 
  /* Estilo para la imagen */
  .imagenItem {
 
-   width: 100%;
-   /* asegura que la imagen llene el contenedor */
+   width: 80%;
    height: auto;
-   /* mantiene la relación de aspecto de la imagen */
+   border-radius: 73%;
 
 
 
