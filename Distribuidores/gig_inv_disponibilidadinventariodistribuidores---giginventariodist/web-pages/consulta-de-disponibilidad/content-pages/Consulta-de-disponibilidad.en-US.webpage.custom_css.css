@@ -57,13 +57,17 @@
  }
 
  .image-container {
-  width: 100px; /* o cualquier tamaño que desees */
-  height: 100px; /* debe ser igual al ancho para un círculo perfecto */
+   padding-left: 50px;
+   padding-right: 25px;
+   width: 100px;
+   /* o cualquier tamaño que desees */
+   height: 100px;
+   /* debe ser igual al ancho para un círculo perfecto */
 
-  /* Alineación de la imagen (opcional) */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   /* Alineación de la imagen (opcional) */
+   display: flex;
+   justify-content: center;
+   align-items: center;
    /* Crear un círculo */
    border-radius: 50%;
    /* esto hace que sea circular */
@@ -76,9 +80,11 @@
  /* Estilo para la imagen */
  .imagenItem {
 
-  width: 100%; /* asegura que la imagen llene el contenedor */
-  height: auto; /* mantiene la relación de aspecto de la imagen */
+   width: 100%;
+   /* asegura que la imagen llene el contenedor */
+   height: auto;
+   /* mantiene la relación de aspecto de la imagen */
 
-  
-  
+
+
  }
