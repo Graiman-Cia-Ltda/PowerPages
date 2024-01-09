@@ -290,7 +290,7 @@ function formatData(data, precioDis, codigoProducto) {
   }
   formattedData += "<div><span id=" + i + " style='font-size: 9px;'>" + etiquetaSaldo + "</span>" + "\n";
   formattedData += "<br></div>";
-
+  console.log(formattedData);
   // Ejemplo: convertir los datos en una tabla
   // formattedData += "<table>";
   // for (var key in data) {
