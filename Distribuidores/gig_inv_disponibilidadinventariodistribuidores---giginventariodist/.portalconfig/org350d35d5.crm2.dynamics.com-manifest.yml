@@ -418,7 +418,7 @@ adx_entitylist:
   IsDeleted: false
 - RecordId: 9f321477-414c-4aeb-8299-3e44491b6ce5
   DisplayName: DisponibilidadSP
-  CheckSum: 66bb0fb8157eab6b2084da16ed8dbd4deba6891fa5b0d55e4842e88255d5c985
+  CheckSum: dd5c8ee249e1f69f1dfd6cdc3470d71b8316643fbc7b355dc86543ed777bb829
   IsDeleted: false
 - RecordId: c4fd426c-80c0-4b17-976d-b0fe4381f9b8
   DisplayName: Active DisponibilidadProductos (2)
@@ -1157,6 +1157,10 @@ adx_urlhistory:
   DisplayName: ~/Mis-Pedidos
   CheckSum: 69f4e1a3a74b2620985623d573b22f1be2ab7031994ac578e138a11aa68be38a
   IsDeleted: false
+- RecordId: 72a7433e-f36b-1410-8309-0047b0727871
+  DisplayName: ~/ConsultaDisponibilidad
+  CheckSum: dcebdc7138f3775c4b4bd0565ed72ec1c81ad743e6a7acf6b30e89108421eab8
+  IsDeleted: false
 - RecordId: 72ce423e-f36b-1410-89a9-0015bab59d47
   DisplayName: ~/Mis-Pedidos
   CheckSum: 6880cc6a861af121da7adb7202de78db2ba47c36a726f2e0d0e7acf4f6d1ade5
@@ -1165,9 +1169,17 @@ adx_urlhistory:
   DisplayName: ~/Carrito
   CheckSum: 43c337f94f9824e42575a4ab102b6725bd4324f5ee8d55f52aa9fa9ad4983e39
   IsDeleted: false
+- RecordId: 76a7433e-f36b-1410-8309-0047b0727871
+  DisplayName: ~/ConsultaDisponibilidad
+  CheckSum: 8b682b7223fd51c320179bb0af68b0d79c661653e0f9aa0462b11c560cf9bef6
+  IsDeleted: false
 - RecordId: 77e8423e-f36b-1410-83c9-0022164a47f4
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: b843969447ca2fe7a025c547eab8d9535f28093dda2e99d8bd9162b5a515eafa
+  IsDeleted: false
+- RecordId: 78a7433e-f36b-1410-8309-0047b0727871
+  DisplayName: ~/ConsultaDisponibilidad
+  CheckSum: 260d8c8669b2ab27e2c74edca6c759ee728aab9a576b9b0726e6496e513d9db9
   IsDeleted: false
 - RecordId: 78ce423e-f36b-1410-89a9-0015bab59d47
   DisplayName: ~/ConsultaDisponibilidad
@@ -1469,6 +1481,10 @@ adx_urlhistory:
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: 3111b76fb692d3d65f33c02d69f892c22d04ef4b1aa8edc17ea531ed1440db8d
   IsDeleted: false
+- RecordId: fc3a433e-f36b-1410-84f8-00816e3b5a1d
+  DisplayName: ~/ConsultaDisponibilidad
+  CheckSum: 9d2d9fcedb6a7c58f5cd40072a8dbbe3ace724b2618989ef6de760b6d7ea9219
+  IsDeleted: false
 - RecordId: fe89433e-f36b-1410-895c-002bec157504
   DisplayName: ~/ConsultaDisponibilidad
   CheckSum: e5ba07b78d5ab9f5eaa338a6150f74ff86883685b93795ea6a36643e91d6fa5b
@@ -1755,7 +1771,7 @@ adx_webpage:
   IsDeleted: false
 - RecordId: 581045b2-c615-ee11-9cbe-002248de6701
   DisplayName: Consulta de disponibilidad
-  CheckSum: 5ee121aea5b237a914a200bbc599b9b322de79a6c64488b5f8cc8faa8a666443
+  CheckSum: 473ba768f8847514edb00ec63e6998236e15e19756ab0d26c7d3f2c74e34674f
   IsDeleted: false
 - RecordId: 591045b2-c615-ee11-9cbe-002248de6701
   DisplayName: Profile

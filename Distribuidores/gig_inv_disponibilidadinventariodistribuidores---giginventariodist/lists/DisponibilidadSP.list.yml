@@ -19,7 +19,19 @@ adx_map_zoom: 12
 adx_name: DisponibilidadSP
 adx_odata_enabled: false
 adx_pagesize: 10
-adx_searchenabled: false
+adx_searchenabled: true
+adx_searchplaceholdertext: >-
+  [
+
+    {
+
+      "LCID": 1033,
+
+      "Value": "Buscar"
+
+    }
+
+  ]
 adx_settings: >-
   {
 

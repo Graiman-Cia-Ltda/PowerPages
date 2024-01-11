@@ -393,6 +393,11 @@
   adx_urlhistoryid: 6cce423e-f36b-1410-89a9-0015bab59d47
   adx_webpageid: 3a9149b5-51ca-efc5-6257-df9a0d045d58
   timezoneruleversionnumber: 0
+- adx_changeddate: 2024-01-11T14:43:34.0000000Z
+  adx_name: ~/ConsultaDisponibilidad
+  adx_urlhistoryid: 72a7433e-f36b-1410-8309-0047b0727871
+  adx_webpageid: 581045b2-c615-ee11-9cbe-002248de6701
+  timezoneruleversionnumber: 0
 - adx_changeddate: 2023-09-08T18:26:54.0000000Z
   adx_name: ~/Mis-Pedidos
   adx_urlhistoryid: 72ce423e-f36b-1410-89a9-0015bab59d47
@@ -403,9 +408,19 @@
   adx_urlhistoryid: 7589433e-f36b-1410-8b8c-00dd7e5a9fbf
   adx_webpageid: 2933d312-7341-206c-bfab-80151f3333bc
   timezoneruleversionnumber: 0
+- adx_changeddate: 2024-01-11T14:44:47.0000000Z
+  adx_name: ~/ConsultaDisponibilidad
+  adx_urlhistoryid: 76a7433e-f36b-1410-8309-0047b0727871
+  adx_webpageid: 581045b2-c615-ee11-9cbe-002248de6701
+  timezoneruleversionnumber: 0
 - adx_changeddate: 2023-09-08T17:31:31.0000000Z
   adx_name: ~/ConsultaDisponibilidad
   adx_urlhistoryid: 77e8423e-f36b-1410-83c9-0022164a47f4
+  adx_webpageid: 581045b2-c615-ee11-9cbe-002248de6701
+  timezoneruleversionnumber: 0
+- adx_changeddate: 2024-01-11T14:45:00.0000000Z
+  adx_name: ~/ConsultaDisponibilidad
+  adx_urlhistoryid: 78a7433e-f36b-1410-8309-0047b0727871
   adx_webpageid: 581045b2-c615-ee11-9cbe-002248de6701
   timezoneruleversionnumber: 0
 - adx_changeddate: 2023-09-08T18:50:23.0000000Z
@@ -781,6 +796,11 @@
 - adx_changeddate: 2024-01-11T14:31:35.0000000Z
   adx_name: ~/ConsultaDisponibilidad
   adx_urlhistoryid: f63a433e-f36b-1410-84f8-00816e3b5a1d
+  adx_webpageid: 581045b2-c615-ee11-9cbe-002248de6701
+  timezoneruleversionnumber: 0
+- adx_changeddate: 2024-01-11T14:50:05.0000000Z
+  adx_name: ~/ConsultaDisponibilidad
+  adx_urlhistoryid: fc3a433e-f36b-1410-84f8-00816e3b5a1d
   adx_webpageid: 581045b2-c615-ee11-9cbe-002248de6701
   timezoneruleversionnumber: 0
 - adx_changeddate: 2023-09-07T15:45:22.0000000Z
