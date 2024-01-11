@@ -277,6 +277,9 @@ function formatData(data, precioDis, codigoProducto) {
 
   var formattedData = "";
   var etiquetaSaldo = "";
+  var keys = Object.keys(data);
+var numberOfKeys = keys.length;
+console.log(numberOfKeys);
 
   // Ejemplo: convertir los datos en una lista con viñetas
   formattedData += '<div id="contenedor"><div class="image-container"><img src="https://www.graiman.com/sites/default/files/styles/156x156/public/productos-texturas/' + codigoProducto.slice(0, -1) + 'E.png" alt="Sin imagen" id="imagenItem" class="imagenItem"></div></div>';
