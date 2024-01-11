@@ -11,23 +11,22 @@
     </div>
   </div>
 </div>
-<div id="myModal" class="modal" style="background-color: rgb(255, 255, 255, 0.85);">
+<div class="modal" style="background-color: rgb(255, 255, 255, 0.85);">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 data-ppid="6b2d5b27-406e-acd3-42bb-ae963afc926c" class="modal-title">Datos obtenidos</h5>
-        <button type="button" data-dismiss="modal" id="botonCerrar" data-ppid="6d2ee6c5-7f33-f5b9-9c3e-291de8f2d5f9" class="close">×</button>
+        <button type="button" data-dismiss="modal" data-ppid="6d2ee6c5-7f33-f5b9-9c3e-291de8f2d5f9" class="close">×</button>
       </div>
       <div class="modal-body">
-        <div id="modalBody"><!-- Aquí se mostrarán los datos obtenidos --></div>
+        <div><!-- Aquí se mostrarán los datos obtenidos --></div>
       </div>
-      <div class="modal-footer"><button type="button" data-dismiss="modal" id="btn-info" data-ppid="b7625003-4b8b-cf7d-0e84-5eb007a3b30d" class="btn btn-secondary">Más información</button><button type="button" data-dismiss="modal" id="btn-carrito" data-ppid="5baefcdb-e474-5901-2533-ce0d6cf7df55" class="btn btn-secondary">Agregar al carrito</button></div>
+      <div class="modal-footer"><button type="button" data-dismiss="modal" data-ppid="b7625003-4b8b-cf7d-0e84-5eb007a3b30d" class="btn btn-secondary">Más información</button><button type="button" data-dismiss="modal" data-ppid="5baefcdb-e474-5901-2533-ce0d6cf7df55" class="btn btn-secondary">Agregar al carrito</button></div>
     </div>
   </div>
 </div>
 <div data-ppid="812a8385-a136-0149-7cc6-b6fffdaf07ce" class="row sectionBlockLayout text-left" style="display: flex; flex-wrap: wrap; margin: 0px; min-height: 374px; padding: 8px; background-color: rgb(255, 255, 255);">
-  <div data-ppid="f37bf9b6-60a4-db19-182c-71e3de0d4931" class="container" style="display: flex; flex-wrap: wrap;"><div data-ppid="47e79c5d-286f-3d4c-1275-d6ae5cc9c64d" class="col-md-12 columnBlockLayout" style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px; padding: 16px; margin: 60px 0px;"></div></div>
+  <div data-ppid="f37bf9b6-60a4-db19-182c-71e3de0d4931" class="container" style="display: flex; flex-wrap: wrap;"><div data-ppid="47e79c5d-286f-3d4c-1275-d6ae5cc9c64d" class="col-md-12 columnBlockLayout" style="word-break: break-word; flex-grow: 1; display: flex; flex-direction: column; min-width: 300px; padding: 16px; margin: 60px 0px;">{% include 'entity_list' key: 'DisponibilidadSP' %}</div></div>
 </div>
-<div id="overlay" data-ppid="dfa5a1dc-5d0d-5c33-ee53-0e9e4c503a69" class="spinner-overlay" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.6); display: none; z-index: 9999;"></div>
-<div id="spinner" class="spinner-container" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none;"><div data-ppid="5739002d-1c86-6a2b-93a9-9835498d4ad6" class="spinner" style="width: 150px; height: 150px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; border-top-width: 4px; border-top-style: solid; border-top-color: rgb(3, 76, 124); border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; animation-duration: 2s; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: infinite; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: spin; animation-timeline: auto;"></div></div>
-
+<div data-ppid="dfa5a1dc-5d0d-5c33-ee53-0e9e4c503a69" class="spinner-overlay" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0.6); display: none; z-index: 9999;"></div>
+<div class="spinner-container" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); display: none;"><div data-ppid="5739002d-1c86-6a2b-93a9-9835498d4ad6" class="spinner" style="width: 150px; height: 150px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: rgb(204, 204, 204); border-bottom-color: rgb(204, 204, 204); border-left-color: rgb(204, 204, 204); border-image-source: initial; border-image-slice: initial; border-image-width: initial; border-image-outset: initial; border-image-repeat: initial; border-top-width: 4px; border-top-style: solid; border-top-color: rgb(3, 76, 124); border-top-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%; border-bottom-left-radius: 50%; animation-duration: 2s; animation-timing-function: linear; animation-delay: 0s; animation-iteration-count: infinite; animation-direction: normal; animation-fill-mode: none; animation-play-state: running; animation-name: spin; animation-timeline: auto;"></div></div>
