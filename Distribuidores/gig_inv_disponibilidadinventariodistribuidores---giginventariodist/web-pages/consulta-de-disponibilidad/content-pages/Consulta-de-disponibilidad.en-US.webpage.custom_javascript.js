@@ -8,6 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
     elemento1.style.fontWeight = "bold"; /* Hace que el texto sea negrita */
     elemento1.style.fontSize = "24px";
 
+    var elemento4 = document.querySelector('[aria-label="Calidad"]');
+    // Asigna la propiedad aria-label
+    elemento4.textContent = "Calidad";
+    elemento4.style.fontWeight = "bold"; /* Hace que el texto sea negrita */
+    elemento4.style.fontSize = "24px";
+
     var elemento2 = document.querySelector('[aria-label="NombreProducto"]');
     // Asigna la propiedad aria-label
     elemento2.textContent = "Descripción";
