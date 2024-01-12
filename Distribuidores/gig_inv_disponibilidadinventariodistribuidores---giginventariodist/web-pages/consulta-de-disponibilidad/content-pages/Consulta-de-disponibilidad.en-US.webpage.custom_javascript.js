@@ -314,7 +314,7 @@ function formatData(data, precioDis, codigoProducto) {
   }
   //}
 
-}
+
 /*for (var key in data) {
   if (key != "saldo") {
     if (data.hasOwnProperty(key)) {
