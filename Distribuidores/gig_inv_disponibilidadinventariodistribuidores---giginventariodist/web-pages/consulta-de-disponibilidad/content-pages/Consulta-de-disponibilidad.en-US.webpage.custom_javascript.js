@@ -278,13 +278,29 @@ function formatData(data, precioDis, codigoProducto) {
   var formattedData = "";
   var etiquetaSaldo = "";
   var keys = Object.keys(data);
-var numberOfKeys = keys.length;
-console.log(numberOfKeys);
+  var numberOfKeys = keys.length;
+  console.log(numberOfKeys);
 
   // Ejemplo: convertir los datos en una lista con viñetas
   formattedData += '<div id="contenedor"><div class="image-container"><img src="https://www.graiman.com/sites/default/files/styles/156x156/public/productos-texturas/' + codigoProducto.slice(0, -1) + 'E.png" alt="Sin imagen" id="imagenItem" class="imagenItem"></div></div>';
-  var i = 1;
-  for (var key in data) {
+  //var i = 1;
+  if (numberOfKeys==5){
+    for (var i = 0; i < numberOfKeys; i++) {
+      var key = keys[i];
+      if (key != "saldo") {
+        if (data.hasOwnProperty(key)) {
+          formattedData += "<div><strong>" + capitalizeString(key) + ":</strong> <span id=" + i + ">" + data[key] + "</span>" + "\n";
+          // No es necesario incrementar 'i' aquí ya que se hace en el bucle for
+        }
+      } else {
+        if (data[key] === "SI") {
+          etiquetaSaldo = "* Precio especial por ser saldo de producto"
+        }
+      }
+    }
+
+  }
+  /*for (var key in data) {
     if (key != "saldo") {
       if (data.hasOwnProperty(key)) {
         formattedData += "<div><strong>" + capitalizeString(key) + ":</strong> <span id=" + i + ">" + data[key] + "</span>" + "\n";
@@ -296,7 +312,7 @@ console.log(numberOfKeys);
       }
     }
 
-  }
+  }*/
   formattedData += "<div><span id=" + i + " style='font-size: 9px;'>" + etiquetaSaldo + "</span>" + "\n";
   formattedData += "<br></div>";
   console.log(formattedData);
