@@ -264,7 +264,7 @@ function comparar() {
     guardarCarrito();
     closeModalExt();
   }
-  else if (Number(cantidadIng) = 0) {
+  else if (Number(cantidadIng) == 0) {
     alert("Ingrese una cantidad válida");
   } else {
     alert("Ingrese una cantidad válida");
