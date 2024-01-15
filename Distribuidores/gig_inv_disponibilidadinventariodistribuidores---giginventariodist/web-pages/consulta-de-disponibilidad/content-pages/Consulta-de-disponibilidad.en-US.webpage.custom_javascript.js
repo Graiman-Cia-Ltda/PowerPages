@@ -94,10 +94,10 @@ function crearBoton() {
       var fila = rows[i].cells[0].innerText;
       var descProd = rows[i].cells[2].innerText;
       var precioDis = rows[i].cells[3].innerText;
-      console.log(rows[i].cells[0].innerText);
+      /*console.log(rows[i].cells[0].innerText);
       console.log(rows[i].cells[1].innerText);
       console.log(rows[i].cells[2].innerText);
-      console.log(rows[i].cells[3].innerText);
+      console.log(rows[i].cells[3].innerText);*/
       button.setAttribute('onclick', `ejecucionFlujo('${fila}', '${descProd}', '${precioDis}')`);
       lastCol.appendChild(button);
 
