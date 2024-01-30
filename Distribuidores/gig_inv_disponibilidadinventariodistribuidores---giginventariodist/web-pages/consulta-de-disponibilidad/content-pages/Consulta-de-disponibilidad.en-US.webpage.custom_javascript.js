@@ -1,7 +1,22 @@
 var band = false;
-
+let tipoPersona = "{{user.giginvci_tipopersona}}";
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
+
+    //************************************************************************/
+    //Definir vista para tipo de persona
+
+    // Obtener todas las filas de la tabla
+    var filas = document.querySelector("table").rows;
+
+    // Recorrer todas las filas
+    for (var i = 0; i < filas.length; i++) {
+      // Ocultar la tercera celda (índice 2) de cada fila
+      filas[i].cells[2].style.display = "none";
+    }
+
+
+    //************************************************************************/
     var elemento1 = document.querySelector('[aria-label="CodigoProducto"]');
     // Asigna la propiedad aria-label
     elemento1.textContent = "Código";
@@ -319,32 +334,32 @@ function formatData(data, precioDis, codigoProducto) {
   //}
 
 
-/*for (var key in data) {
-  if (key != "saldo") {
-    if (data.hasOwnProperty(key)) {
-      formattedData += "<div><strong>" + capitalizeString(key) + ":</strong> <span id=" + i + ">" + data[key] + "</span>" + "\n";
-      i++;
+  /*for (var key in data) {
+    if (key != "saldo") {
+      if (data.hasOwnProperty(key)) {
+        formattedData += "<div><strong>" + capitalizeString(key) + ":</strong> <span id=" + i + ">" + data[key] + "</span>" + "\n";
+        i++;
+      }
+    } else {
+      if (data[key] === "SI") {
+        etiquetaSaldo = "* Precio especial por ser saldo de producto"
+      }
     }
-  } else {
-    if (data[key] === "SI") {
-      etiquetaSaldo = "* Precio especial por ser saldo de producto"
-    }
-  }
+  
+  }*/
+  formattedData += "<div><span id=" + i + " style='font-size: 9px;'>" + etiquetaSaldo + "</span>" + "\n";
+  formattedData += "<br></div>";
+  console.log(formattedData);
+  // Ejemplo: convertir los datos en una tabla
+  // formattedData += "<table>";
+  // for (var key in data) {
+  //   if (data.hasOwnProperty(key)) {
+  //     formattedData += "<tr><td><strong>" + key + "</strong></td><td>" + data[key] + "</td></tr>";
+  //   }
+  // }
+  // formattedData += "</table>";
 
-}*/
-formattedData += "<div><span id=" + i + " style='font-size: 9px;'>" + etiquetaSaldo + "</span>" + "\n";
-formattedData += "<br></div>";
-console.log(formattedData);
-// Ejemplo: convertir los datos en una tabla
-// formattedData += "<table>";
-// for (var key in data) {
-//   if (data.hasOwnProperty(key)) {
-//     formattedData += "<tr><td><strong>" + key + "</strong></td><td>" + data[key] + "</td></tr>";
-//   }
-// }
-// formattedData += "</table>";
-
-return formattedData;
+  return formattedData;
 }
 
 function capitalizeString(str) {
