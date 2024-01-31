@@ -2,6 +2,7 @@ var band = false;
 let tipoPersona = "{{user.giginvci_tipopersona}}";
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
+    showSpinner();
 
 
     var elemento1 = document.querySelector('[aria-label="CodigoProducto"]');
@@ -41,7 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
     //alert(botonFiltro);
     botonFiltro.addEventListener("click", function () {
       console.log("Entró click");
+      
       crearBoton();
+      hideSpinner();
     });
 
     /*var campoBusqueda = document.getElementsByClassName("query form-control")[0];
@@ -68,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //******** cuando carga la página ***************************************
 function crearBoton() {
   setTimeout(function () {
-    showSpinner();
+    
     //console.log("Han pasado 5 segundos");
     //let lecturaBoton = document.getElementById('btnPrueba');
     let table = document.querySelector("table tbody");
