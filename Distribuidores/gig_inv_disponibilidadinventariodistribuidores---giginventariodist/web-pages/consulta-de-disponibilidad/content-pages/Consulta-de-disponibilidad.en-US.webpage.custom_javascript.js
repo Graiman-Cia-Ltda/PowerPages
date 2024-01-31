@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("Entró click");
 
       crearBoton();
-      hideSpinner();
+      
     });
 
     /*var campoBusqueda = document.getElementsByClassName("query form-control")[0];
@@ -65,7 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 5000 milisegundos = 5 segundos
     //});
+    hideSpinner();
   }, 1000);
+  hideSpinner();
 });
 
 //******** cuando carga la página ***************************************
