@@ -3,20 +3,7 @@ let tipoPersona = "{{user.giginvci_tipopersona}}";
 document.addEventListener("DOMContentLoaded", function () {
   setTimeout(function () {
 
-    //************************************************************************/
-    //Definir vista para tipo de persona
 
-    // Obtener todas las filas de la tabla
-    var filas = document.querySelector("table").rows;
-
-    // Recorrer todas las filas
-    for (var i = 0; i < filas.length; i++) {
-      // Ocultar la tercera celda (índice 2) de cada fila
-      filas[i].cells[2].style.display = "none";
-    }
-
-
-    //************************************************************************/
     var elemento1 = document.querySelector('[aria-label="CodigoProducto"]');
     // Asigna la propiedad aria-label
     elemento1.textContent = "Código";
@@ -117,6 +104,21 @@ function crearBoton() {
       lastCol.appendChild(button);
 
     }
+
+        //************************************************************************/
+    //Definir vista para tipo de persona
+
+    // Obtener todas las filas de la tabla
+    var filas = document.querySelector("table").rows;
+
+    // Recorrer todas las filas
+    for (var i = 0; i < filas.length; i++) {
+      // Ocultar la tercera celda (índice 2) de cada fila
+      filas[i].cells[2].style.display = "none";
+    }
+
+
+    //************************************************************************/
 
     var ulLista = document.getElementsByClassName("pagination")[0];
     ulLista.addEventListener("click", function () {
