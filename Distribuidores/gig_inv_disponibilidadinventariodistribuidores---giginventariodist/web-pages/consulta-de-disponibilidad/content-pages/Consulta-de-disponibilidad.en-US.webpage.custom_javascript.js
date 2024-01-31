@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //alert(botonFiltro);
     botonFiltro.addEventListener("click", function () {
       console.log("Entró click");
-      
+
       crearBoton();
       hideSpinner();
     });
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //******** cuando carga la página ***************************************
 function crearBoton() {
   setTimeout(function () {
-    
+
     //console.log("Han pasado 5 segundos");
     //let lecturaBoton = document.getElementById('btnPrueba');
     let table = document.querySelector("table tbody");
@@ -109,21 +109,23 @@ function crearBoton() {
 
     }
 
-        //************************************************************************/
-    //Definir vista para tipo de persona
-
-    // Obtener todas las filas de la tabla
-    var filas = document.querySelector("table").rows;
-
-    // Recorrer todas las filas
-    for (var i = 0; i < filas.length; i++) {
-      // Ocultar la tercera celda (índice 2) de cada fila
-      filas[i].cells[3].style.display = "none";
-    }
-
-    hideSpinner();
     //************************************************************************/
+    //Definir vista para tipo de persona
+    if (tipoPersona === "DNP") {
 
+
+      // Obtener todas las filas de la tabla
+      var filas = document.querySelector("table").rows;
+
+      // Recorrer todas las filas
+      for (var i = 0; i < filas.length; i++) {
+        // Ocultar la tercera celda (índice 2) de cada fila
+        filas[i].cells[3].style.display = "none";
+      }
+
+      hideSpinner();
+      //************************************************************************/
+    }
     var ulLista = document.getElementsByClassName("pagination")[0];
     ulLista.addEventListener("click", function () {
       if (event.target.tagName === "A" || event.target.tagName === "LI") {
