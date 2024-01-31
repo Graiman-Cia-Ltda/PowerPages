@@ -114,7 +114,7 @@ function crearBoton() {
     // Recorrer todas las filas
     for (var i = 0; i < filas.length; i++) {
       // Ocultar la tercera celda (índice 2) de cada fila
-      filas[i].cells[2].style.display = "none";
+      filas[i].cells[3].style.display = "none";
     }
 
 
