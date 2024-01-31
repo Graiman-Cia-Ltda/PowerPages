@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //******** cuando carga la página ***************************************
 function crearBoton() {
   setTimeout(function () {
+    showSpinner();
     //console.log("Han pasado 5 segundos");
     //let lecturaBoton = document.getElementById('btnPrueba');
     let table = document.querySelector("table tbody");
@@ -117,7 +118,7 @@ function crearBoton() {
       filas[i].cells[3].style.display = "none";
     }
 
-
+    hideSpinner();
     //************************************************************************/
 
     var ulLista = document.getElementsByClassName("pagination")[0];
