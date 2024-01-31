@@ -123,7 +123,7 @@ function crearBoton() {
         filas[i].cells[3].style.display = "none";
       }
 
-      hideSpinner();
+      
       //************************************************************************/
     }
     var ulLista = document.getElementsByClassName("pagination")[0];
@@ -133,6 +133,7 @@ function crearBoton() {
         crearBoton();
       }
     });
+    hideSpinner();
   }, 900);
 }
 // Declarar las variables fuera del alcance de la función ejecucionFlujo
