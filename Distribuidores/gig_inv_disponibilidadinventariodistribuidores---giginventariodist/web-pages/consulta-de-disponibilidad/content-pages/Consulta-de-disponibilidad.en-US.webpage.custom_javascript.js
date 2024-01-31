@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 5000 milisegundos = 5 segundos
     //});
-    hideSpinner();
+    //hideSpinner();
   }, 1000);
   hideSpinner();
 });
